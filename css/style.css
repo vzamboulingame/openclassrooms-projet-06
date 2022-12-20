@@ -2,7 +2,6 @@
 
 body {
   font-family: "DM Sans", sans-serif;
-  margin: 0;
 }
 
 header {
@@ -47,8 +46,6 @@ h1 {
 
 .photographer_section article h3 {
   color: #901c1c;
-  margin: 0;
-  padding: 0;
   font-weight: 400;
   font-size: 13px;
   line-height: 17px;
