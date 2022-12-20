@@ -1,28 +1,41 @@
 export function photographerFactory(data) {
-  const { name, city, country, portrait } = data;
+  const { name, city, country, tagline, price, portrait } = data;
 
   const picture = `assets/photographers/${portrait}`;
-  const imgAltText = `Portrait of ${name}`;
-  const location = `${city}, ${country}`;
 
   function getUserCardDOM() {
     const article = document.createElement("article");
+    article.className += "photographer-card";
 
-    const img = document.createElement("img");
-    img.setAttribute("src", picture);
-    img.setAttribute("alt", imgAltText);
+    const photographerImg = document.createElement("img");
+    photographerImg.className += "photographer-img";
+    photographerImg.setAttribute("src", picture);
+    photographerImg.setAttribute("alt", `Portrait of ${name}`);
 
-    const h2 = document.createElement("h2");
-    h2.textContent = name;
+    const photographerName = document.createElement("h2");
+    photographerName.className += "photographer-name";
+    photographerName.textContent = name;
 
-    const h3 = document.createElement("h3");
-    h3.textContent = location;
+    const photographerLocation = document.createElement("p");
+    photographerLocation.className += "photographer-location";
+    photographerLocation.textContent = `${city}, ${country}`;
 
-    article.appendChild(img);
-    article.appendChild(h2);
-    article.appendChild(h3);
+    const photographerTagline = document.createElement("p");
+    photographerTagline.className += "photographer-tagline";
+    photographerTagline.textContent = tagline;
+
+    const photographerRate = document.createElement("p");
+    photographerRate.className += "photographer-rate";
+    photographerRate.textContent = `${price} € / jour`;
+
+    article.appendChild(photographerImg);
+    article.appendChild(photographerName);
+    article.appendChild(photographerLocation);
+    article.appendChild(photographerTagline);
+    article.appendChild(photographerRate);
 
     return article;
   }
+
   return { name, picture, getUserCardDOM };
 }
