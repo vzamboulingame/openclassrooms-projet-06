@@ -27,6 +27,8 @@
   };
 } */
 
+import { photographerFactory } from "../factories/photographer.js";
+
 async function getPhotographersData() {
   try {
     const response = await fetch("data/photographers.json");
