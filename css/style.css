@@ -99,7 +99,6 @@ h6 {
 *****************************************/
 body {
   font-family: "DM Sans", sans-serif;
-  width: 90%;
   max-width: 1920px;
   margin: 0 auto;
 }
@@ -109,6 +108,7 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding: 1em;
 }
 @media only screen and (max-width: 1023px) {
   header {
@@ -120,12 +120,22 @@ header {
 
 h1 {
   color: #901c1c;
-  margin: 1em 0;
+  margin-right: 10rem;
+}
+@media only screen and (max-width: 1023px) {
+  h1 {
+    margin: 1em 0;
+  }
 }
 
 .logo {
   height: 5rem;
-  margin: 1em 0;
+  margin-left: 10rem;
+}
+@media only screen and (max-width: 1023px) {
+  .logo {
+    margin: 1em 0;
+  }
 }
 
 .photographer-section {
@@ -137,6 +147,7 @@ h1 {
 @media only screen and (max-width: 1023px) {
   .photographer-section {
     grid-template-columns: 1fr 1fr;
+    margin: 1em 0;
   }
 }
 @media only screen and (max-width: 767px) {
