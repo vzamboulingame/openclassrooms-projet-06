@@ -12,13 +12,13 @@ export function photographerFactory(data) {
     photographerCardLink.setAttribute("href", "#");
     photographerCardLink.setAttribute(
       "aria-label",
-      `Link to ${name}'s portfolio`
+      `Lien vers le portfolio de ${name}`
     );
 
     const photographerImg = document.createElement("img");
     photographerImg.className += "photographer-img";
     photographerImg.setAttribute("src", picture);
-    photographerImg.setAttribute("alt", `Portrait of ${name}`);
+    photographerImg.setAttribute("alt", `Photo de ${name}`);
 
     const photographerName = document.createElement("h2");
     photographerName.className += "photographer-name";
