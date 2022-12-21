@@ -16,3 +16,27 @@
     }
   }
 }
+
+@mixin for-tablet {
+  @if $mobile-first {
+    @media only screen and (min-width: $tablet-breakpoint) {
+      @content;
+    }
+  } @else {
+    @media only screen and (max-width: calc($tablet-breakpoint - 1px)) {
+      @content;
+    }
+  }
+}
+
+@mixin for-mobile {
+  @if $mobile-first {
+    @media only screen and (min-width: $mobile-breakpoint) {
+      @content;
+    }
+  } @else {
+    @media only screen and (max-width: calc($mobile-breakpoint - 1px)) {
+      @content;
+    }
+  }
+}
