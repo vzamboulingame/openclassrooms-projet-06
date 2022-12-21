@@ -1,8 +1,12 @@
-$mobile-first: true; // Switch to false for "dektop-first"
-$min-width: 480px; // Used as lower limit for "mobile-first" media query
+$mobile-first: false; // Switch to false for "dektop-first"
+$min-width: 320px; // Used as lower limit for "mobile-first" media query
 $max-width: 1365px; // Used as upper limit for "desktop-first" media query
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1280px;
+
+$img-object-fit: cover; // Default object-fit setting for all <img>
+$transition-time: 0.2s; // Don't go over 0.3ms
+
 $html-font-size: 62.5%; // 62.5% of default HTML font size is 10 px. Used to make rem calculations easier (1 rem is now 10px)
 $body-font-size: 1.6rem; // Used with $html-font-size: 62.5% this resets <body> font size to default size of 16px
-$resp-font-vw: 0.3vw; // Increment value for responsive font sizing
-$img-object-fit: cover; // Default object-fit setting for all <img>
-$transition-time: 200ms; // Don't go over 300ms
+$resp-font-vw: 0.2vw; // Increment value for responsive font sizing
