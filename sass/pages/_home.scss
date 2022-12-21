@@ -6,6 +6,8 @@
 
 body {
     font-family: "DM Sans", sans-serif;
+    max-width: 1920px;
+    margin: 0 auto;
 }
 
 header {
@@ -68,7 +70,7 @@ h1 {
     &-location {
         color: #901c1c;
         font-weight: 400;
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 
     &-tagline {
