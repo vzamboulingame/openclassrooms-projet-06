@@ -1,0 +1,87 @@
+/*****************************************
+* HOME PAGE SPECIFIC STYLES
+*****************************************/
+
+@use "../utils/" as *;
+
+body {
+    font-family: "DM Sans", sans-serif;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+}
+
+h1 {
+    color: #901c1c;
+    margin-right: 100px;
+}
+
+.logo {
+    height: 50px;
+    margin-left: 100px;
+}
+
+.photographer-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 70px;
+    margin-top: 100px;
+}
+
+.photographer-card {
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.photographer-card-link {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    text-align: center;
+}
+
+.photographer-name {
+    color: #d3573c;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 47px;
+}
+
+.photographer-img {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 1em;
+}
+
+.photographer-location {
+    color: #901c1c;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 17px;
+}
+
+.photographer-tagline {
+    color: #000000;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 13px;
+}
+
+.photographer-rate {
+    color: #757575;
+    font-weight: 400;
+    font-size: 9px;
+    line-height: 12px;
+}
