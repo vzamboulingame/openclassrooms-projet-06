@@ -37,6 +37,15 @@ h1 {
   flex-direction: column;
 }
 
+.photographer-card-link {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  text-align: center;
+}
+
 .photographer-name {
   color: #d3573c;
   font-weight: 400;

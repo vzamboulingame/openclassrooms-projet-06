@@ -7,6 +7,14 @@ export function photographerFactory(data) {
     const article = document.createElement("article");
     article.className += "photographer-card";
 
+    const photographerCardLink = document.createElement("a");
+    photographerCardLink.className += "photographer-card-link";
+    photographerCardLink.setAttribute("href", "#");
+    photographerCardLink.setAttribute(
+      "aria-label",
+      `Link to ${name}'s portfolio`
+    );
+
     const photographerImg = document.createElement("img");
     photographerImg.className += "photographer-img";
     photographerImg.setAttribute("src", picture);
@@ -28,8 +36,10 @@ export function photographerFactory(data) {
     photographerRate.className += "photographer-rate";
     photographerRate.textContent = `${price} € / jour`;
 
-    article.appendChild(photographerImg);
-    article.appendChild(photographerName);
+    photographerCardLink.appendChild(photographerImg);
+    photographerCardLink.appendChild(photographerName);
+
+    article.appendChild(photographerCardLink);
     article.appendChild(photographerLocation);
     article.appendChild(photographerTagline);
     article.appendChild(photographerRate);
