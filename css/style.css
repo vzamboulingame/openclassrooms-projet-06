@@ -139,7 +139,7 @@ h1 {
     grid-template-columns: 1fr 1fr;
   }
 }
-@media only screen and (max-width: 575px) {
+@media only screen and (max-width: 767px) {
   .photographer-section {
     grid-template-columns: 1fr;
   }
