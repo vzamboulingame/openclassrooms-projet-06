@@ -125,7 +125,6 @@ h1 {
   gap: 7rem;
   margin-top: 10rem;
 }
-
 .photographer-card {
   justify-self: center;
   display: flex;
@@ -133,7 +132,6 @@ h1 {
   align-items: center;
   flex-direction: column;
 }
-
 .photographer-card-link {
   display: flex;
   flex-flow: column nowrap;
@@ -142,14 +140,12 @@ h1 {
   text-decoration: none;
   text-align: center;
 }
-
 .photographer-name {
   color: #d3573c;
   font-weight: 400;
   font-size: 3.6rem;
   line-height: 4.7rem;
 }
-
 .photographer-img {
   height: 20rem;
   width: 20rem;
@@ -158,21 +154,18 @@ h1 {
   border-radius: 50%;
   margin-bottom: 1em;
 }
-
 .photographer-location {
   color: #901c1c;
   font-weight: 400;
   font-size: 1.3rem;
   line-height: 1.7rem;
 }
-
 .photographer-tagline {
   color: #000000;
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.3rem;
 }
-
 .photographer-rate {
   color: #757575;
   font-weight: 400;
@@ -217,16 +210,13 @@ h1 {
   padding: 3.5rem;
   margin: auto;
 }
-
 .modal header {
   justify-content: space-between;
   width: 100%;
 }
-
 .modal header img {
   cursor: pointer;
 }
-
 .modal header h2 {
   font-size: 6.4rem;
   font-weight: normal;
@@ -239,12 +229,10 @@ form {
   flex-direction: column;
   align-items: flex-start;
 }
-
 form label {
   color: #312e2e;
   font-size: 3.6rem;
 }
-
 form div {
   display: flex;
   flex-direction: column;
@@ -252,7 +240,6 @@ form div {
   align-items: self-start;
   margin-bottom: 2.6rem;
 }
-
 form input {
   width: 100%;
   height: 6.8rem;
