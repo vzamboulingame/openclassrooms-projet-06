@@ -144,7 +144,6 @@ h1 {
   color: #d3573c;
   font-weight: 400;
   font-size: 3.6rem;
-  line-height: 4.7rem;
 }
 .photographer-img {
   height: 20rem;
@@ -157,20 +156,17 @@ h1 {
 .photographer-location {
   color: #901c1c;
   font-weight: 400;
-  font-size: 1.3rem;
-  line-height: 1.7rem;
+  font-size: 1.5rem;
 }
 .photographer-tagline {
   color: #000000;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.3rem;
+  font-size: 1.5rem;
 }
 .photographer-rate {
   color: #757575;
   font-weight: 400;
-  font-size: 0.9rem;
-  line-height: 1.2rem;
+  font-size: 1.5rem;
 }
 
 /*****************************************
