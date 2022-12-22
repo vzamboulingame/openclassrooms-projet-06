@@ -15,7 +15,7 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 1em;
+    padding: 1em 0;
 
     @include for-tablet {
         flex-direction: column;
