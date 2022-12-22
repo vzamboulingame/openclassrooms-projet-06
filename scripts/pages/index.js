@@ -1,6 +1,6 @@
 import { photographerFactory } from "../factories/photographer.js";
 
-async function getPhotographersData() {
+async function fetchJsonData() {
   try {
     const response = await fetch("data/photographers.json");
     const data = await response.json();
@@ -10,20 +10,19 @@ async function getPhotographersData() {
   }
 }
 
-async function displayData(photographers) {
+async function generatePhotographerHtml(photographers) {
   const photographersSection = document.querySelector(".photographer-section");
 
   photographers.forEach((photographer) => {
     const photographerModel = photographerFactory(photographer);
-    const userCardDOM = photographerModel.getUserCardDOM();
+    const userCardDOM = photographerModel.getPhotographerCardDOM();
     photographersSection.appendChild(userCardDOM);
   });
 }
 
-async function init() {
-  // Récupère les datas des photographes
-  const { photographers } = await getPhotographersData();
-  displayData(photographers);
+async function renderPhotographerProfiles() {
+  const { photographers } = await fetchJsonData();
+  generatePhotographerHtml(photographers);
 }
 
-init();
+renderPhotographerProfiles();

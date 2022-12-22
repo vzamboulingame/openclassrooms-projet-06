@@ -3,7 +3,7 @@ export function photographerFactory(data) {
 
   const picture = `assets/photographers/${portrait}`;
 
-  function getUserCardDOM() {
+  function getPhotographerCardDOM() {
     const article = document.createElement("article");
     article.className += "photographer-card";
 
@@ -47,5 +47,5 @@ export function photographerFactory(data) {
     return article;
   }
 
-  return { name, picture, getUserCardDOM };
+  return { name, picture, getPhotographerCardDOM };
 }
