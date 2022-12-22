@@ -1,5 +1,5 @@
 export function photographerFactory(data) {
-  const { name, city, country, tagline, price, portrait } = data;
+  const { name, id, city, country, tagline, price, portrait } = data;
 
   const picture = `assets/photographers/${portrait}`;
 
@@ -9,7 +9,7 @@ export function photographerFactory(data) {
 
     const photographerCardLink = document.createElement("a");
     photographerCardLink.className += "photographer-card-link";
-    photographerCardLink.setAttribute("href", "#");
+    photographerCardLink.setAttribute("href", `photographer.html?id=${id}`);
     photographerCardLink.setAttribute(
       "aria-label",
       `Lien vers le portfolio de ${name}`
