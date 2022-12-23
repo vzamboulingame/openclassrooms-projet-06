@@ -1,14 +1,5 @@
 import { photographerFactory } from "../factories/photographer.js";
-
-async function fetchJsonData() {
-  try {
-    const response = await fetch("data/photographers.json");
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error(error);
-  }
-}
+import { fetchJsonData } from "../utils/fetchJsonData.js";
 
 async function generatePhotographerHtml(photographers) {
   const photographersSection = document.querySelector(".photographer-section");
