@@ -2,8 +2,23 @@
 * PHOTOGRAPHER PAGE SPECIFIC STYLES
 *****************************************/
 
-#contact_modal {
-    display: none;
+.contact {
+    &-modal {
+        display: none;
+    }
+
+    &-button {
+        font-size: 2rem;
+        font-weight: bold;
+        color: white;
+        padding: 1.1rem;
+        width: 17rem;
+        height: 7rem;
+        border: none;
+        background-color: #901c1c;
+        border-radius: 0.5rem;
+        cursor: pointer;
+    }
 }
 
 .photograph {
@@ -26,7 +41,7 @@
     &-name {
         color: #d3573c;
         font-weight: 400;
-        font-size: 6rem;
+        font-size: 5rem;
     }
 
     &-location {
@@ -48,19 +63,6 @@
         object-fit: cover;
         border-radius: 50%;
     }
-}
-
-.contact_button {
-    font-size: 2rem;
-    font-weight: bold;
-    color: white;
-    padding: 1.1rem;
-    width: 17rem;
-    height: 7rem;
-    border: none;
-    background-color: #901c1c;
-    border-radius: 0.5rem;
-    cursor: pointer;
 }
 
 .modal {

@@ -54,6 +54,30 @@ h6 {
 }
 
 /*****************************************
+* GLOBAL ELEMENTS
+*****************************************/
+body {
+  font-family: "DM Sans", sans-serif;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 0;
+}
+@media only screen and (max-width: 1023px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/*****************************************
 * UTILITY CLASSES
 *****************************************/
 .red {
@@ -97,39 +121,19 @@ h6 {
 /*****************************************
 * HOME PAGE SPECIFIC STYLES
 *****************************************/
-body {
-  font-family: "DM Sans", sans-serif;
-  max-width: 1920px;
-  margin: 0 auto;
-}
-
-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1em 0;
-}
-@media only screen and (max-width: 1023px) {
-  header {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-h1 {
+.title {
   color: #901c1c;
   margin-right: 10rem;
+  font-size: 4rem;
 }
 @media only screen and (max-width: 1023px) {
-  h1 {
+  .title {
     margin: 1em 0;
   }
 }
 
 .logo {
-  height: 5rem;
+  height: 6rem;
   margin-left: 10rem;
 }
 @media only screen and (max-width: 1023px) {
@@ -202,8 +206,20 @@ h1 {
 /*****************************************
 * PHOTOGRAPHER PAGE SPECIFIC STYLES
 *****************************************/
-#contact_modal {
+.contact-modal {
   display: none;
+}
+.contact-button {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  padding: 1.1rem;
+  width: 17rem;
+  height: 7rem;
+  border: none;
+  background-color: #901c1c;
+  border-radius: 0.5rem;
+  cursor: pointer;
 }
 
 .photograph-header {
@@ -223,7 +239,7 @@ h1 {
 .photograph-name {
   color: #d3573c;
   font-weight: 400;
-  font-size: 6rem;
+  font-size: 5rem;
 }
 .photograph-location {
   color: #901c1c;
@@ -242,19 +258,6 @@ h1 {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 50%;
-}
-
-.contact_button {
-  font-size: 2rem;
-  font-weight: bold;
-  color: white;
-  padding: 1.1rem;
-  width: 17rem;
-  height: 7rem;
-  border: none;
-  background-color: #901c1c;
-  border-radius: 0.5rem;
-  cursor: pointer;
 }
 
 .modal {

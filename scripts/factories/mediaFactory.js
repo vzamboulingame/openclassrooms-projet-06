@@ -12,6 +12,6 @@ export function mediaFactory(data) {
     return article;
   }
 
-  // Returning an object with the name and picture properties and the getPhotographerCardDOM function
+  // Returning an object with the getMediaCardDOM function
   return { getMediaCardDOM };
 }

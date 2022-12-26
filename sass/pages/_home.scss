@@ -4,29 +4,10 @@
 
 @use "../utils/" as *;
 
-body {
-    font-family: "DM Sans", sans-serif;
-    max-width: 1920px;
-    margin: 0 auto;
-}
-
-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1em 0;
-
-    @include for-tablet {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-}
-
-h1 {
+.title {
     color: #901c1c;
     margin-right: 10rem;
+    font-size: 4rem;
 
     @include for-tablet {
         margin: 1em 0;
@@ -34,7 +15,7 @@ h1 {
 }
 
 .logo {
-    height: 5rem;
+    height: 6rem;
     margin-left: 10rem;
 
     @include for-tablet {
