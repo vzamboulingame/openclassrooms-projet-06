@@ -18,6 +18,22 @@ async function getPhotographerMedia() {
   );
 }
 
-console.log(getPhotographerInfo());
+async function renderPhotographHeader() {
+  const { name, city, country, tagline, portrait } =
+    await getPhotographerInfo();
+  const photographHeader = document.querySelector(".photograph-header");
+  const picture = `assets/photographers/${portrait}`;
 
-console.log(getPhotographerMedia());
+  photographHeader.innerHTML = `
+  <div class="photograph-info">
+    <h1 class="photograph-name">${name}</h1>
+    <p class="photograph-location">${city}, ${country}<p>
+    <p class="photograph-tagline">${tagline}<p>
+  </div>
+  <button class="contact_button" aria-label="Bouton d'ouverture de modal"
+  onclick="displayModal()">Contactez-moi</button>
+  <img class="photograph-img" src="${picture}">
+  `;
+}
+
+renderPhotographHeader();

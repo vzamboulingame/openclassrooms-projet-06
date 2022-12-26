@@ -207,9 +207,41 @@ h1 {
 }
 
 .photograph-header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
   background-color: #fafafa;
   height: 30rem;
-  margin: 0 10rem;
+  padding: 3em;
+  margin: 2em 5em;
+}
+.photograph-info {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.photograph-name {
+  color: #d3573c;
+  font-weight: 400;
+  font-size: 6rem;
+}
+.photograph-location {
+  color: #901c1c;
+  font-weight: 400;
+  font-size: 3rem;
+}
+.photograph-tagline {
+  color: #000000;
+  font-weight: 400;
+  font-size: 2rem;
+  margin-top: 1em;
+}
+.photograph-img {
+  height: 20rem;
+  width: 20rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
 }
 
 .contact_button {

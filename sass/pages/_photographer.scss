@@ -6,10 +6,48 @@
     display: none;
 }
 
-.photograph-header {
-    background-color: #fafafa;
-    height: 30rem;
-    margin: 0 10rem;
+.photograph {
+    &-header {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #fafafa;
+        height: 30rem;
+        padding: 3em;
+        margin: 2em 5em;
+    }
+
+    &-info {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
+    &-name {
+        color: #d3573c;
+        font-weight: 400;
+        font-size: 6rem;
+    }
+
+    &-location {
+        color: #901c1c;
+        font-weight: 400;
+        font-size: 3rem;
+    }
+
+    &-tagline {
+        color: #000000;
+        font-weight: 400;
+        font-size: 2rem;
+        margin-top: 1em;
+    }
+
+    &-img {
+        height: 20rem;
+        width: 20rem;
+        object-fit: cover;
+        border-radius: 50%;
+    }
 }
 
 .contact_button {
