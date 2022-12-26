@@ -1,4 +1,4 @@
-import { photographerFactory } from "../factories/photographer.js";
+import { photographerFactory } from "../factories/photographerFactory.js";
 import { fetchJsonData } from "../utils/fetchJsonData.js";
 
 async function generatePhotographerHtml(photographers) {
