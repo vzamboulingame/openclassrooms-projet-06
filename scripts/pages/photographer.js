@@ -38,4 +38,20 @@ async function renderPhotographHeader() {
   mainEl.innerHTML += photographHeader;
 }
 
+async function renderPhotographFooter() {
+  const { price } = await getPhotographerInfo();
+
+  const photographFooter = `
+    <aside class="photograph-footer">
+        <p>xxx likes</p>
+        <p>${price} € / jour</p>
+    </aside>
+  `;
+
+  const footerEl = document.querySelector("footer");
+  footerEl.innerHTML += photographFooter;
+}
+
 renderPhotographHeader();
+
+renderPhotographFooter();
