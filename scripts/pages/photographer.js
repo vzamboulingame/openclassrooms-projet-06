@@ -1,5 +1,6 @@
 import { displayModal, closeModal } from "../utils/contactForm.js";
 import { fetchJsonData } from "../utils/fetchJsonData.js";
+import { mediaFactory } from "../factories/mediaFactory.js";
 
 const params = new URL(document.location).searchParams;
 const photographerId = parseInt(params.get("id"));
@@ -43,7 +44,7 @@ async function renderPhotographFooter() {
 
   const photographFooter = `
     <aside class="photograph-footer">
-        <p>xxx likes</p>
+        <i class="fa-solid fa-heart"></i>
         <p>${price} € / jour</p>
     </aside>
   `;
@@ -52,6 +53,27 @@ async function renderPhotographFooter() {
   footerEl.innerHTML += photographFooter;
 }
 
+async function renderMediaArticle() {
+  const mediaArray = await getPhotographerMedia();
+
+  const mainEl = document.querySelector("main");
+  const mediaSection = document.createElement("div");
+  mediaSection.className = "media-section";
+
+  mainEl.append(mediaSection);
+
+  mediaArray.forEach((media) => {
+    // Create a media card model object from the media array
+    const mediaCardModel = mediaFactory(media);
+    // Get the DOM element for the media card
+    const mediaCardDOM = mediaCardModel.getMediaCardDOM();
+    // Add the card to the media section
+    mediaSection.append(mediaCardDOM);
+  });
+}
+
 renderPhotographHeader();
 
 renderPhotographFooter();
+
+renderMediaArticle();

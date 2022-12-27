@@ -14,15 +14,6 @@
     }
 }
 
-.logo {
-    height: 6rem;
-    margin-left: 10rem;
-
-    @include for-tablet {
-        margin: 1em 0;
-    }
-}
-
 .photographer {
     &-section {
         display: grid;

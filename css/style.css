@@ -62,18 +62,35 @@ body {
   margin: 0 auto;
 }
 
-header {
+main {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 1em 0;
+  padding: 2em 0;
 }
 @media only screen and (max-width: 1023px) {
-  header {
+  .header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+}
+.header-link {
+  text-decoration: none;
+}
+.header-logo {
+  height: 6rem;
+  margin-left: 10rem;
+}
+@media only screen and (max-width: 1023px) {
+  .header-logo {
+    margin: 1em 0;
   }
 }
 
@@ -128,16 +145,6 @@ header {
 }
 @media only screen and (max-width: 1023px) {
   .title {
-    margin: 1em 0;
-  }
-}
-
-.logo {
-  height: 6rem;
-  margin-left: 10rem;
-}
-@media only screen and (max-width: 1023px) {
-  .logo {
     margin: 1em 0;
   }
 }
@@ -230,7 +237,19 @@ header {
   background-color: #fafafa;
   height: 30rem;
   padding: 3em;
-  margin: 2em 5em;
+  margin: 2em 0;
+}
+@media only screen and (max-width: 1023px) {
+  .photograph-header {
+    flex-flow: column-reverse nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    row-gap: 1em;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+  }
 }
 .photograph-footer {
   z-index: 1;
@@ -276,6 +295,49 @@ header {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 50%;
+}
+
+.media-section {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  row-gap: 2em;
+  padding: 2em 0;
+}
+@media only screen and (max-width: 767px) {
+  .media-section {
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.media-card {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 35rem;
+}
+.media-card-img, .media-card-video {
+  width: 35rem;
+  height: 30rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0.5rem;
+}
+.media-card-info {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1em;
+  color: #911c1c;
+}
+.media-card-title {
+  font-weight: 400;
+  font-size: 2.4rem;
+}
+.media-card-likes {
+  font-weight: 400;
+  font-size: 2.2rem;
 }
 
 .modal {

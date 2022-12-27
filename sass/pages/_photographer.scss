@@ -2,6 +2,8 @@
 * PHOTOGRAPHER PAGE SPECIFIC STYLES
 *****************************************/
 
+@use "../utils/" as *;
+
 .contact {
     &-modal {
         display: none;
@@ -30,7 +32,18 @@
         background-color: #fafafa;
         height: 30rem;
         padding: 3em;
-        margin: 2em 5em;
+        margin: 2em 0;
+
+        @include for-tablet {
+            flex-flow: column-reverse nowrap;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            row-gap: 1em;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+        }
     }
 
     &-footer {
@@ -81,6 +94,57 @@
         width: 20rem;
         object-fit: cover;
         border-radius: 50%;
+    }
+}
+
+.media {
+    &-section {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        row-gap: 2em;
+        padding: 2em 0;
+
+        @include for-mobile {
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    &-card {
+        display: flex;
+        flex-flow: column nowrap;
+        width: 35rem;
+
+        &-img,
+        &-video {
+            width: 35rem;
+            height: 30rem;
+            object-fit: cover;
+            border-radius: 0.5rem;
+        }
+
+        &-info {
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 1em;
+            color: #911c1c;
+        }
+
+        &-title {
+            font-weight: 400;
+            font-size: 2.4rem;
+
+            @include for-mobile;
+        }
+
+        &-likes {
+            font-weight: 400;
+            font-size: 2.2rem;
+        }
     }
 }
 
