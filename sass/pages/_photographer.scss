@@ -9,11 +9,9 @@
         display: none;
         position: fixed;
         z-index: 1;
-        left: 0;
-        top: 0;
-        height: 100%;
-        width: 100%;
-        overflow: auto;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
     }
 
     &-button {
@@ -158,7 +156,8 @@
 .modal {
     border-radius: 0.5rem;
     background-color: #db8876;
-    width: 50%;
+    width: 67rem;
+    height: 90rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -179,6 +178,12 @@
             font-weight: normal;
             text-align: center;
         }
+    }
+
+    &-closebtn {
+        position: absolute;
+        top: 1em;
+        right: 1em;
     }
 }
 
