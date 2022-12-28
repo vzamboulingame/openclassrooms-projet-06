@@ -37,9 +37,6 @@ async function renderPhotographHeader() {
 
   const mainEl = document.querySelector("main");
   mainEl.innerHTML += photographHeader;
-
-  const contactBtn = document.getElementById("contactBtn");
-  contactBtn.addEventListener("click", displayModal);
 }
 
 async function renderPhotographFooter() {
@@ -75,11 +72,18 @@ async function renderMediaArticle() {
   });
 }
 
-renderPhotographHeader();
+async function renderPhotographMediaPage() {
+  await renderPhotographHeader();
 
-renderPhotographFooter();
+  await renderPhotographFooter();
 
-renderMediaArticle();
+  await renderMediaArticle();
 
-const modalCloseBtn = document.getElementById("modalCloseBtn");
-modalCloseBtn.addEventListener("click", closeModal);
+  const contactBtn = document.getElementById("contactBtn");
+  contactBtn.addEventListener("click", displayModal);
+
+  const modalCloseBtn = document.getElementById("modalCloseBtn");
+  modalCloseBtn.addEventListener("click", closeModal);
+}
+
+renderPhotographMediaPage();
