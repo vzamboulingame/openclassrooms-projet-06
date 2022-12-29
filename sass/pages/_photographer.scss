@@ -198,6 +198,9 @@
     &-label {
         color: #312e2e;
         font-size: 3rem;
+        line-height: 3.2rem;
+        margin: 0;
+        padding: 0;
     }
 
     &-input {
@@ -206,10 +209,11 @@
         border: none;
         border-radius: 0.5rem;
         font-size: 2rem;
+        margin: 0;
         padding: 1em;
     }
 
     &-msg {
-        height: 10rem;
+        height: 12rem;
     }
 }

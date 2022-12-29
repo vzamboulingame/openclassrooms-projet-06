@@ -388,6 +388,9 @@ main {
 .modal-label {
   color: #312e2e;
   font-size: 3rem;
+  line-height: 3.2rem;
+  margin: 0;
+  padding: 0;
 }
 .modal-input {
   width: 100%;
@@ -395,8 +398,9 @@ main {
   border: none;
   border-radius: 0.5rem;
   font-size: 2rem;
+  margin: 0;
   padding: 1em;
 }
 .modal-msg {
-  height: 10rem;
+  height: 12rem;
 }/*# sourceMappingURL=style.css.map */
