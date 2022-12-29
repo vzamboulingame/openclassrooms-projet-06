@@ -1,30 +1,7 @@
 import { displayModal, closeModal } from "../utils/contactForm.js";
-import { fetchJsonData } from "../utils/fetchJsonData.js";
 import { mediaFactory } from "../factories/mediaFactory.js";
-
-// Retrieve the photographer's id from the URL parameters
-const params = new URL(document.location).searchParams;
-const photographerId = parseInt(params.get("id"));
-
-// Retrieve a photographer's info from the JSON data by their id
-async function getPhotographerInfo() {
-  // Fetch the photographer object from the JSON data
-  const { photographers } = await fetchJsonData();
-  // Find the photographer object in the photographers array with the matching id
-  return photographers.find(
-    (photographer) => photographer.id === photographerId
-  );
-}
-
-// Retrieve a photographer's media items from the JSON data by their id
-async function getPhotographerMedia() {
-  // Fetch the media array from the JSON data
-  const { media } = await fetchJsonData();
-  // Filter the media array to return only items with a matching photographerId
-  return media.filter(
-    (mediaItem) => mediaItem.photographerId === photographerId
-  );
-}
+import { getPhotographerInfo } from "../utils/getPhotographerInfo.js";
+import { getPhotographerMedia } from "../utils/getPhotographerMedia.js";
 
 async function renderPhotographHeader() {
   // Destructuring the photographer info object to extract its properties
