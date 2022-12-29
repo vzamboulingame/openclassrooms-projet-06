@@ -39,7 +39,7 @@ async function renderPhotographHeader() {
         <p class="photograph-location">${city}, ${country}</p>
         <p class="photograph-tagline">${tagline}</p>
       </div>
-      <button class="contact-button" id="contactBtn" aria-label="Bouton d'ouverture de modal">Contactez-moi</button>
+      <button class="button" id="contactBtn" aria-label="Bouton d'ouverture de modal">Contactez-moi</button>
       <img class="photograph-img" src="assets/photographers/${portrait}" alt="Photo de ${name}">
     </section>
   `;

@@ -27,23 +27,36 @@
   <footer>
   </footer>
 
-  <div class="contact-modal" id="contactModal">
-    <div class="modal">
-      <header>
-        <h2>Contactez-moi</h2>
-        <span class="modal-closebtn" id="modalCloseBtn">
-          <img src="assets/icons/close.svg" alt="Icone de fermeture de modal">
-        </span>
+  <div class="modal" id="contactModal">
+    <header class="modal-header">
+      <h2 class="modal-title">Contactez-moi<br>Nom Photographe</h2>
+      <button class="modal-close" id="modalCloseBtn">
+        <img src="assets/icons/close.svg" alt="Icone de fermeture de modal">
+      </button>
+    </header>
+    <form class="modal-form" id="modalForm">
+      <fieldset class="modal-fieldset">
+        <label class="modal-label" for="firstName">Prénom</label><br>
+        <input class="modal-input" type="text" id="firstName" name="firstName" minlength="2" pattern="(?!^ +$)^.+$"
+          required><br>
 
-      </header>
-      <form>
-        <div>
-          <label>Prénom</label>
-        </div>
-        <button class="contact-button" id="submitButton">Envoyer</button>
-      </form>
-    </div>
+        <label class="modal-label" for="lastName">Nom</label><br>
+        <input class="modal-input" type="text" id="lastName" name="lastName" minlength="2" pattern="(?!^ +$)^.+$"
+          required><br>
+
+        <label class="modal-label" for="email">E-mail</label><br>
+        <input class="modal-input" type="email" id="email" name="email" required><br>
+
+        <label class="modal-label" for="message">Message</label><br>
+        <input class="modal-input modal-msg" type="text" id="message" name="message" minlength="10"
+          pattern="(?!^ +$)^.+$" required><br>
+      </fieldset>
+      <fieldset class="modal-fieldset">
+        <button class="button" id="submitButton" type="submit">Envoyer</button>
+      </fieldset>
+    </form>
   </div>
+
 
   <script type="module" src="scripts/pages/photographer.js"></script>
 </body>
