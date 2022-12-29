@@ -6,7 +6,7 @@ import { displayModal, closeModal } from "../utils/contactForm.js";
 const photographerInfo = await getPhotographerInfo();
 const photographerMedia = await getPhotographerMedia();
 
-async function renderPhotographHeader(object) {
+function renderPhotographHeader(object) {
   // Destructuring the photographer info object to extract to extract its properties
   const { name, city, country, tagline, portrait } = object;
 
@@ -28,7 +28,7 @@ async function renderPhotographHeader(object) {
   mainEl.innerHTML += photographHeader;
 }
 
-async function renderPhotographFooter(object) {
+function renderPhotographFooter(object) {
   // Destructuring the photographer info object to extract the photographer price
   const { price } = object;
 
@@ -45,7 +45,7 @@ async function renderPhotographFooter(object) {
   footerEl.innerHTML += photographFooter;
 }
 
-async function renderMediaArticle(array) {
+function renderMediaArticle(array) {
   // Create a new div element to hold the media cards
   const mediaSection = document.createElement("div");
   mediaSection.className = "media-section";
@@ -65,7 +65,7 @@ async function renderMediaArticle(array) {
   });
 }
 
-async function insertPhotographName(object) {
+function insertPhotographName(object) {
   // Destructuring the photographer info object to extract the name property
   const { name } = object;
 
@@ -74,7 +74,7 @@ async function insertPhotographName(object) {
   modalTitle.innerHTML = `Contactez-moi<br>${name}`;
 }
 
-async function validateModalForm(event) {
+function validateModalForm(event) {
   event.preventDefault();
 
   const modalForm = document.getElementById("modalForm");
