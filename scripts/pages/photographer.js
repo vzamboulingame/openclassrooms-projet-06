@@ -1,7 +1,7 @@
-import { displayModal, closeModal } from "../utils/contactForm.js";
 import { mediaFactory } from "../factories/mediaFactory.js";
 import { getPhotographerInfo } from "../utils/getPhotographerInfo.js";
 import { getPhotographerMedia } from "../utils/getPhotographerMedia.js";
+import { displayModal, closeModal } from "../utils/contactForm.js";
 
 const photographerInfo = await getPhotographerInfo();
 const photographerMedia = await getPhotographerMedia();
