@@ -3,10 +3,12 @@ import { mediaFactory } from "../factories/mediaFactory.js";
 import { getPhotographerInfo } from "../utils/getPhotographerInfo.js";
 import { getPhotographerMedia } from "../utils/getPhotographerMedia.js";
 
-async function renderPhotographHeader() {
-  // Destructuring the photographer info object to extract its properties
-  const { name, city, country, tagline, portrait } =
-    await getPhotographerInfo();
+const photographerInfo = await getPhotographerInfo();
+const photographerMedia = await getPhotographerMedia();
+
+async function renderPhotographHeader(object) {
+  // Destructuring the photographer info object to extract to extract its properties
+  const { name, city, country, tagline, portrait } = object;
 
   // Create the HTML for the header section
   const photographHeader = `
@@ -26,9 +28,9 @@ async function renderPhotographHeader() {
   mainEl.innerHTML += photographHeader;
 }
 
-async function renderPhotographFooter() {
-  // Destructuring the photographer info object to extract a property
-  const { price } = await getPhotographerInfo();
+async function renderPhotographFooter(object) {
+  // Destructuring the photographer info object to extract the photographer price
+  const { price } = object;
 
   // Create the HTML for the footer section
   const photographFooter = `
@@ -43,10 +45,7 @@ async function renderPhotographFooter() {
   footerEl.innerHTML += photographFooter;
 }
 
-async function renderMediaArticle() {
-  // Get the array of media items of the photographer
-  const mediaArray = await getPhotographerMedia();
-
+async function renderMediaArticle(array) {
   // Create a new div element to hold the media cards
   const mediaSection = document.createElement("div");
   mediaSection.className = "media-section";
@@ -55,8 +54,8 @@ async function renderMediaArticle() {
   const mainEl = document.querySelector("main");
   mainEl.append(mediaSection);
 
-  // Iterate through each media item in the mediaArray
-  mediaArray.forEach((media) => {
+  // Iterate through each media item in the array
+  array.forEach((media) => {
     // Create a media card model object from the media array
     const mediaCardModel = mediaFactory(media);
     // Get the DOM element for the media card
@@ -66,9 +65,9 @@ async function renderMediaArticle() {
   });
 }
 
-async function insertPhotographName() {
+async function insertPhotographName(object) {
   // Destructuring the photographer info object to extract the name property
-  const { name } = await getPhotographerInfo();
+  const { name } = object;
 
   // Add the photographer name to the modalTitle element
   const modalTitle = document.querySelector(".modal-title");
@@ -77,16 +76,16 @@ async function insertPhotographName() {
 
 async function renderPhotographMediaPage() {
   // Render the header section of the page with the photographer's name, location, tagline, and portrait
-  await renderPhotographHeader();
+  await renderPhotographHeader(photographerInfo);
 
   // Render the footer section of the page with the photographer's likes and rate
-  await renderPhotographFooter();
+  await renderPhotographFooter(photographerInfo);
 
   // Render the media section of the page with cards for each media item
-  await renderMediaArticle();
+  await renderMediaArticle(photographerMedia);
 
   // Insert the photographer name in the modal title
-  await insertPhotographName();
+  await insertPhotographName(photographerInfo);
 
   // Add an event listener to the contact button to open the contact modal on click
   const contactBtn = document.getElementById("contactBtn");
