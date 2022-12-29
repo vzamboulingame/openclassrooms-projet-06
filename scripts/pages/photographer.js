@@ -89,6 +89,15 @@ async function renderMediaArticle() {
   });
 }
 
+async function insertPhotographName() {
+  // Destructuring the photographer info object to extract the name property
+  const { name } = await getPhotographerInfo();
+
+  // Add the photographer name to the modalTitle element
+  const modalTitle = document.querySelector(".modal-title");
+  modalTitle.innerHTML = `Contactez-moi<br>${name}`;
+}
+
 async function renderPhotographMediaPage() {
   // Render the header section of the page with the photographer's name, location, tagline, and portrait
   await renderPhotographHeader();
@@ -98,6 +107,9 @@ async function renderPhotographMediaPage() {
 
   // Render the media section of the page with cards for each media item
   await renderMediaArticle();
+
+  // Insert the photographer name in the modal title
+  await insertPhotographName();
 
   // Add an event listener to the contact button to open the contact modal on click
   const contactBtn = document.getElementById("contactBtn");
