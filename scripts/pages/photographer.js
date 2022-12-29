@@ -74,6 +74,27 @@ async function insertPhotographName(object) {
   modalTitle.innerHTML = `Contactez-moi<br>${name}`;
 }
 
+async function validateModalForm(event) {
+  event.preventDefault();
+
+  const modalForm = document.getElementById("modalForm");
+  const firstName = document.getElementById("firstName");
+  const lastName = document.getElementById("lastName");
+  const email = document.getElementById("email");
+  const message = document.getElementById("message");
+
+  if (modalForm.checkValidity()) {
+    console.log({
+      firstName: firstName.value,
+      lastName: lastName.value,
+      email: email.value,
+      message: message.value,
+    });
+    modalForm.reset();
+    closeModal();
+  }
+}
+
 async function renderPhotographMediaPage() {
   // Render the header section of the page with the photographer's name, location, tagline, and portrait
   await renderPhotographHeader(photographerInfo);
@@ -94,6 +115,10 @@ async function renderPhotographMediaPage() {
   // Add an event listener to the close button in the modal to close the modal on click
   const modalCloseBtn = document.getElementById("modalCloseBtn");
   modalCloseBtn.addEventListener("click", closeModal);
+
+  // Add an event listener to validate the modal form on submit
+  const modalForm = document.getElementById("modalForm");
+  modalForm.addEventListener("submit", validateModalForm);
 }
 
 // Render the entire photographer's media page with all its elements
