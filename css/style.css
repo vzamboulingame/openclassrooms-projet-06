@@ -424,4 +424,8 @@ dialog {
   justify-content: center;
   align-items: center;
   padding: 2em;
+  max-width: 80vw;
+  max-height: 80vh;
+  -o-object-fit: contain;
+     object-fit: contain;
 }/*# sourceMappingURL=style.css.map */

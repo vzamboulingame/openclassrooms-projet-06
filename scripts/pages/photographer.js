@@ -98,7 +98,6 @@ function validateModalForm(event) {
 async function renderLightBoxMedia(mediaId) {
   // Get the media object for the specified media id
   const mediaObject = photographerMedia.find((media) => media.id == mediaId);
-  console.log(mediaObject);
 
   // Destructuring the media object to extract its properties
   const { title, photographerId, image, video } = mediaObject;
@@ -156,10 +155,9 @@ async function renderPhotographMediaPage() {
   const mediaCardLinks = document.querySelectorAll(".media-card-link");
   mediaCardLinks.forEach((card) => {
     card.addEventListener("click", () => {
-      displayModal("lightboxModal");
       const mediaId = card.id;
-      console.log(mediaId);
       renderLightBoxMedia(mediaId);
+      displayModal("lightboxModal");
     });
   });
 
