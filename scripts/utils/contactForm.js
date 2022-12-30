@@ -1,15 +1,13 @@
-export function displayModal() {
-  const modal = document.getElementById("contactModal");
-  const main = document.querySelector("main");
-  modal.style.display = "block";
+export function displayModal(modalName) {
+  const modal = document.getElementById(modalName);
+  modal.showModal();
+  modal.style.display = "flex";
   modal.setAttribute("aria-hidden", "false");
-  main.setAttribute("aria-hidden", "true");
 }
 
-export function closeModal() {
-  const modal = document.getElementById("contactModal");
-  const main = document.querySelector("main");
+export function closeModal(modalName) {
+  const modal = document.getElementById(modalName);
+  modal.close();
   modal.style.display = "none";
-  main.setAttribute("aria-hidden", "false");
   modal.setAttribute("aria-hidden", "true");
 }

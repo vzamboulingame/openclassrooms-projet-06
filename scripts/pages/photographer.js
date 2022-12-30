@@ -18,7 +18,7 @@ function renderPhotographHeader(object) {
         <p class="photograph-location">${city}, ${country}</p>
         <p class="photograph-tagline">${tagline}</p>
       </div>
-      <button class="button" id="contactBtn" aria-label="Bouton d'ouverture de modal">Contactez-moi</button>
+      <button class="button" id="contactBtn" aria-label="Bouton d'ouverture du modal de contact">Contactez-moi</button>
       <img class="photograph-img" src="assets/photographers/${portrait}" alt="Photo de ${name}">
     </section>
   `;
@@ -91,7 +91,7 @@ function validateModalForm(event) {
       message: message.value,
     });
     modalForm.reset();
-    closeModal();
+    closeModal("contactModal");
   }
 }
 
@@ -110,11 +110,15 @@ async function renderPhotographMediaPage() {
 
   // Add an event listener to the contact button to open the contact modal on click
   const contactBtn = document.getElementById("contactBtn");
-  contactBtn.addEventListener("click", displayModal);
+  contactBtn.addEventListener("click", () => {
+    displayModal("contactModal");
+  });
 
   // Add an event listener to the close button in the modal to close the modal on click
   const modalCloseBtn = document.getElementById("modalCloseBtn");
-  modalCloseBtn.addEventListener("click", closeModal);
+  modalCloseBtn.addEventListener("click", () => {
+    closeModal("contactModal");
+  });
 
   // Add an event listener to validate the modal form on submit
   const modalForm = document.getElementById("modalForm");

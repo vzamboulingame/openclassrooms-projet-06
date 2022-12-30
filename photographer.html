@@ -27,10 +27,10 @@
   <footer>
   </footer>
 
-  <dialog class="modal" id="contactModal">
+  <dialog class="modal" id="contactModal" aria-hidden="true">
     <header class="modal-header">
-      <h2 class="modal-title">Contactez-moi<br>Nom Photographe</h2>
-      <button class="modal-close" id="modalCloseBtn">
+      <h2 class="modal-title">Contactez-moi</h2>
+      <button class="modal-close" aria-label="Bouton de fermeture du modal de contact" id="modalCloseBtn">
         <img src="assets/icons/close.svg" alt="Icone de fermeture de modal">
       </button>
     </header>
@@ -50,11 +50,12 @@
       <input class="modal-input modal-msg" type="text" id="message" name="message" minlength="10" maxlength="100"
         pattern="(?!^ +$)^.+$" required><br>
 
-      <button class="button modal-submit" id="submitButton" type="submit">Envoyer</button>
+      <button class="button modal-submit" aria-label="Bouton de soumission du formulaire du modal de contact"
+        id="submitButton" type="submit">Envoyer</button>
     </form>
   </dialog>
 
-  <dialog class="lightbox" id="lightbox">
+  <dialog class="lightbox" id="lightbox" aria-hidden="true">
 
   </dialog>
 
