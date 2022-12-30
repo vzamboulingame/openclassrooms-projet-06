@@ -423,9 +423,8 @@ dialog {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2em;
-  max-width: 80vw;
-  max-height: 80vh;
+  max-width: 80%;
+  max-height: 80%;
   -o-object-fit: contain;
      object-fit: contain;
 }/*# sourceMappingURL=style.css.map */
