@@ -95,6 +95,34 @@ function validateModalForm(event) {
   }
 }
 
+async function renderLightBoxMedia(mediaId) {
+  // Get the media object for the specified media id
+  const mediaObject = photographerMedia.find((media) => media.id == mediaId);
+  console.log(mediaObject);
+
+  // Destructuring the media object to extract its properties
+  const { title, photographerId, image, video } = mediaObject;
+
+  // Get the lightboxMedia element
+  const lightboxMedia = document.getElementById("lightboxMedia");
+
+  // If the media is an image add the appropriate media card html to the lightboxMedia element
+  if (image) {
+    lightboxMedia.innerHTML = `
+      <img class="lightbox-img" src="assets/images/${photographerId}/${image}" alt="${title}">
+  `;
+  }
+
+  // If the media is a video add the appropriate media card html to the lightboxMedia element
+  if (video) {
+    lightboxMedia.innerHTML = `
+      <video class="lightbox-video" title="${title}" controls>
+        <source src="assets/images/${photographerId}/${video}" type="video/mp4">
+      </video>
+  `;
+  }
+}
+
 async function renderPhotographMediaPage() {
   // Render the header section of the page with the photographer's name, location, tagline, and portrait
   await renderPhotographHeader(photographerInfo);
@@ -129,6 +157,9 @@ async function renderPhotographMediaPage() {
   mediaCardLinks.forEach((card) => {
     card.addEventListener("click", () => {
       displayModal("lightboxModal");
+      const mediaId = card.id;
+      console.log(mediaId);
+      renderLightBoxMedia(mediaId);
     });
   });
 
