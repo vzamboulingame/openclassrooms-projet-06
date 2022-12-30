@@ -343,7 +343,6 @@ dialog {
 
 .modal {
   position: fixed;
-  z-index: 1;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -396,4 +395,26 @@ dialog {
 }
 .modal-submit {
   margin-top: 2em;
+}
+
+.lightbox {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+  width: 100%;
+  height: 100%;
+  padding: 2em;
+}
+.lightbox-close {
+  all: unset;
+  cursor: pointer;
+  position: absolute;
+  z-index: 1;
+  top: 2em;
+  right: 2em;
 }/*# sourceMappingURL=style.css.map */

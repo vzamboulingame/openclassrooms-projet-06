@@ -123,6 +123,20 @@ async function renderPhotographMediaPage() {
   // Add an event listener to validate the modal form on submit
   const modalForm = document.getElementById("modalForm");
   modalForm.addEventListener("submit", validateModalForm);
+
+  // Add an event listener to the media cards to open the lightbox modal on click
+  const mediaCardLinks = document.querySelectorAll(".media-card-link");
+  mediaCardLinks.forEach((card) => {
+    card.addEventListener("click", () => {
+      displayModal("lightboxModal");
+    });
+  });
+
+  // Add an event listener to the close button in the modal to close the modal on click
+  const lightboxCloseBtn = document.getElementById("lightboxCloseBtn");
+  lightboxCloseBtn.addEventListener("click", () => {
+    closeModal("lightboxModal");
+  });
 }
 
 // Render the entire photographer's media page with all its elements
