@@ -1,6 +1,6 @@
 export function mediaFactory(data) {
   // Destructuring the data object to extract its properties
-  const { id, photographerId, title, image, video, likes, date, price } = data;
+  const { id, photographerId, title, image, video, likes } = data;
 
   // Defining a function that will return a DOM element for the media card
   function getMediaCardDOM() {
