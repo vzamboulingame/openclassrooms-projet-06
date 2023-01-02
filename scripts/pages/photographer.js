@@ -3,8 +3,14 @@ import { getPhotographerInfo } from "../utils/getPhotographerInfo.js";
 import { getPhotographerMedia } from "../utils/getPhotographerMedia.js";
 import { displayModal, closeModal } from "../utils/contactForm.js";
 
+// Fetch photographer info object
 const photographerInfo = await getPhotographerInfo();
+
+// Fetch photographer media array
 const photographerMedia = await getPhotographerMedia();
+
+// Initialize a variable that will contain the current lightbox media id
+let currentLightboxMediaId = 0;
 
 function renderPhotographHeader(object) {
   // Destructuring the photographer info object to extract to extract its properties
@@ -104,6 +110,10 @@ async function renderLightBoxMedia(mediaId) {
     (media) => media.id == mediaId
   );
 
+  // Update the currentMediaId variable with the current lightbox media id
+  currentLightboxMediaId = mediaId;
+  console.log(currentLightboxMediaId);
+
   // Destructuring the media object to extract its properties
   const { title, photographerId, image, video } = mediaObject;
 
@@ -129,19 +139,41 @@ async function renderLightBoxMedia(mediaId) {
   }
 }
 
-async function renderPhotographMediaPage() {
-  // Render the header section of the page with the photographer's name, location, tagline, and portrait
-  await renderPhotographHeader(photographerInfo);
+function nextLightBoxMedia() {
+  // Find the index of the current media item in the photographerMedia array
+  const currentIndex = photographerMedia.findIndex(
+    (media) => media.id == currentLightboxMediaId
+  );
 
-  // Render the footer section of the page with the photographer's likes and rate
-  await renderPhotographFooter(photographerInfo);
+  // If the current media item is not the last item in the array, display the next item
+  if (currentIndex < photographerMedia.length - 1) {
+    const nextMediaId = photographerMedia[currentIndex + 1].id;
+    renderLightBoxMedia(nextMediaId);
+    // Else display the first item of the array
+  } else {
+    const nextMediaId = photographerMedia[0].id;
+    renderLightBoxMedia(nextMediaId);
+  }
+}
 
-  // Render the media section of the page with cards for each media item
-  await renderMediaArticle(photographerMedia);
+function previousLightBoxMedia() {
+  // Find the index of the current media item in the photographerMedia array
+  const currentIndex = photographerMedia.findIndex(
+    (media) => media.id == currentLightboxMediaId
+  );
 
-  // Insert the photographer name in the modal title
-  await insertPhotographName(photographerInfo);
+  // If the current media item is not the first item in the array, display the previous item
+  if (currentIndex > 0) {
+    const previousMediaId = photographerMedia[currentIndex - 1].id;
+    renderLightBoxMedia(previousMediaId);
+    // Else display the last item of the array
+  } else {
+    const previousMediaId = photographerMedia[photographerMedia.length - 1].id;
+    renderLightBoxMedia(previousMediaId);
+  }
+}
 
+function addEventListeners() {
   // Add an event listener to the contact button to open the contact modal on click
   const contactBtn = document.getElementById("contactBtn");
   contactBtn.addEventListener("click", () => {
@@ -173,6 +205,55 @@ async function renderPhotographMediaPage() {
   lightboxCloseBtn.addEventListener("click", () => {
     closeModal("lightboxModal");
   });
+
+  // Add an event listener to the previous button in the lightbox modal to switch to the previous media on click
+  const previousBtn = document.getElementById("lightboxPreviousBtn");
+  previousBtn.addEventListener("click", previousLightBoxMedia);
+
+  // Add an event listener to the next button in the lightbox modal to switch to the next media on click
+  const nextBtn = document.getElementById("lightboxNextBtn");
+  nextBtn.addEventListener("click", nextLightBoxMedia);
+
+  // Add an event listener to lightboxModal to switch to the previous/next media on press of left/right arrow keys
+  document.addEventListener("keydown", (event) => {
+    // Get the lightboxModal element
+    const lightboxModal = document.getElementById("lightboxModal");
+
+    // Do nothing if the event was already processed
+    if (event.defaultPrevented) {
+      return;
+    }
+
+    // If lightboxModal is open & the left arrow key is pressed, call the previousLightBoxMedia function
+    if (lightboxModal.open && event.key === "ArrowLeft") {
+      previousLightBoxMedia();
+    }
+
+    // If lightboxModal is open & the right arrow key is pressed, call the nextLightBoxMedia function
+    if (lightboxModal.open && event.key === "ArrowRight") {
+      nextLightBoxMedia();
+    }
+
+    // Cancel the default action to avoid it being handled twice
+    event.preventDefault();
+  });
+}
+
+async function renderPhotographMediaPage() {
+  // Render the header section of the page with the photographer's name, location, tagline, and portrait
+  await renderPhotographHeader(photographerInfo);
+
+  // Render the footer section of the page with the photographer's likes and rate
+  await renderPhotographFooter(photographerInfo);
+
+  // Render the media section of the page with cards for each media item
+  await renderMediaArticle(photographerMedia);
+
+  // Insert the photographer name in the modal title
+  await insertPhotographName(photographerInfo);
+
+  // Add all the event listeners
+  addEventListeners();
 }
 
 // Render the entire photographer's media page with all its elements
