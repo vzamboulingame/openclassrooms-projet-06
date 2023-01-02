@@ -424,6 +424,7 @@ dialog {
 }
 .lightbox-media {
   display: flex;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
   max-width: 80%;
@@ -446,4 +447,10 @@ dialog {
 }
 .lightbox-next {
   right: 2em;
+}
+.lightbox-caption {
+  all: unset;
+  font-size: 4rem;
+  color: #911c1c;
+  margin-top: 1em;
 }/*# sourceMappingURL=style.css.map */

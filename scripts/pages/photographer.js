@@ -114,6 +114,7 @@ async function renderLightBoxMedia(mediaId) {
   if (image) {
     lightboxMedia.innerHTML = `
       <img class="lightbox-img" src="assets/images/${photographerId}/${image}" alt="${title}">
+      <figcaption class="lightbox-caption">${title}</figcaption>
   `;
   }
 
@@ -123,6 +124,7 @@ async function renderLightBoxMedia(mediaId) {
       <video class="lightbox-video" title="${title}" controls>
         <source src="assets/images/${photographerId}/${video}" type="video/mp4">
       </video>
+      <figcaption class="lightbox-caption">${title}</figcaption>
   `;
   }
 }

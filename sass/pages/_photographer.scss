@@ -235,6 +235,7 @@
 
     &-media {
         display: flex;
+        flex-flow: column nowrap;
         justify-content: center;
         align-items: center;
         max-width: 80%;
@@ -260,5 +261,12 @@
 
     &-next {
         right: 2em;
+    }
+
+    &-caption {
+        all: unset;
+        font-size: 4rem;
+        color: #911c1c;
+        margin-top: 1em;
     }
 }
