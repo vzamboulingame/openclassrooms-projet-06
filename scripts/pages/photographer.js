@@ -156,9 +156,9 @@ async function renderPhotographMediaPage() {
   const modalForm = document.getElementById("modalForm");
   modalForm.addEventListener("submit", validateModalForm);
 
-  // Add an event listener to each media card link to open the lightbox modal on click
-  const mediaCardLinks = document.querySelectorAll(".media-card-link");
-  mediaCardLinks.forEach((card) => {
+  // Add an event listener to each media card figure to open the lightbox modal on click
+  const mediaCardFigures = document.querySelectorAll(".media-card-figure");
+  mediaCardFigures.forEach((card) => {
     card.addEventListener("click", () => {
       const mediaId = card.id;
       renderLightBoxMedia(mediaId);

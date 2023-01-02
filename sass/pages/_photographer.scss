@@ -111,6 +111,10 @@
         flex-flow: column nowrap;
         width: 35rem;
 
+        &-figure {
+            cursor: pointer;
+        }
+
         &-img,
         &-video {
             width: 35rem;

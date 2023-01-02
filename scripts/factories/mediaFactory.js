@@ -11,9 +11,9 @@ export function mediaFactory(data) {
     // If the media is an image add the appropriate media card html to the article element
     if (image) {
       article.innerHTML = `
-      <a class="media-card-link" href="#lightboxModal" id="${id}" tabindex="0">
+      <figure class="media-card-figure" id="${id}" tabindex="0">
         <img class="media-card-img" src="assets/images/${photographerId}/${image}" alt="${title}">
-      </a>
+      </figure>
       <div class="media-card-info">
         <h2 class="media-card-title">${title}</h2>
         <span class="media-card-likes">${likes} <i class="fa-solid fa-heart"></i></i></span>
@@ -24,11 +24,11 @@ export function mediaFactory(data) {
     // If the media is a video add the appropriate media card html to the article element
     if (video) {
       article.innerHTML = `
-      <a class="media-card-link" href="#lightboxModal" id="${id}" tabindex="0">
+      <figure class="media-card-figure" id="${id}" tabindex="0">
         <video class="media-card-video" title="${title}">
           <source src="assets/images/${photographerId}/${video}" type="video/mp4">
         </video>
-      </a>
+      </figure>
       <div class="media-card-info">
         <h2 class="media-card-title">${title}</h2>
         <span class="media-card-likes">${likes} <i class="fa-solid fa-heart"></i></i></span>

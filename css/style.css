@@ -317,6 +317,9 @@ dialog {
   flex-flow: column nowrap;
   width: 35rem;
 }
+.media-card-figure {
+  cursor: pointer;
+}
 .media-card-img, .media-card-video {
   width: 35rem;
   height: 30rem;
