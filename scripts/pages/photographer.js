@@ -75,14 +75,17 @@ function insertPhotographName(object) {
 }
 
 function validateModalForm(event) {
+  // Prevent the default form submission
   event.preventDefault();
 
+  // Get the elements of the modal form & its inputs
   const modalForm = document.getElementById("modalForm");
   const firstName = document.getElementById("firstName");
   const lastName = document.getElementById("lastName");
   const email = document.getElementById("email");
   const message = document.getElementById("message");
 
+  // Check if the form input data is valid & console.log the data as an object
   if (modalForm.checkValidity()) {
     console.log({
       firstName: firstName.value,
@@ -97,7 +100,9 @@ function validateModalForm(event) {
 
 async function renderLightBoxMedia(mediaId) {
   // Get the media object for the specified media id
-  const mediaObject = photographerMedia.find((media) => media.id == mediaId);
+  const mediaObject = await photographerMedia.find(
+    (media) => media.id == mediaId
+  );
 
   // Destructuring the media object to extract its properties
   const { title, photographerId, image, video } = mediaObject;
@@ -141,17 +146,17 @@ async function renderPhotographMediaPage() {
     displayModal("contactModal");
   });
 
-  // Add an event listener to the close button in the modal to close the modal on click
+  // Add an event listener to the close button in the modal to close the contact modal on click
   const modalCloseBtn = document.getElementById("modalCloseBtn");
   modalCloseBtn.addEventListener("click", () => {
     closeModal("contactModal");
   });
 
-  // Add an event listener to validate the modal form on submit
+  // Add an event listener to validate the contact modal form on submit
   const modalForm = document.getElementById("modalForm");
   modalForm.addEventListener("submit", validateModalForm);
 
-  // Add an event listener to the media cards to open the lightbox modal on click
+  // Add an event listener to each media card link to open the lightbox modal on click
   const mediaCardLinks = document.querySelectorAll(".media-card-link");
   mediaCardLinks.forEach((card) => {
     card.addEventListener("click", () => {
@@ -161,7 +166,7 @@ async function renderPhotographMediaPage() {
     });
   });
 
-  // Add an event listener to the close button in the modal to close the modal on click
+  // Add an event listener to the close button in the lightbox modal to close the modal on click
   const lightboxCloseBtn = document.getElementById("lightboxCloseBtn");
   lightboxCloseBtn.addEventListener("click", () => {
     closeModal("lightboxModal");
