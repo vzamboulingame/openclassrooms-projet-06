@@ -224,22 +224,24 @@
     height: 100vh;
     padding: 2em;
 
+    &-container {
+        position: relative;
+    }
+
     &-close {
         all: unset;
         cursor: pointer;
         position: absolute;
         z-index: 1;
-        top: 2em;
-        right: 2em;
+        top: 0;
+        right: -6em;
     }
 
     &-media {
         display: flex;
         flex-flow: column nowrap;
         justify-content: center;
-        align-items: center;
-        max-width: 80%;
-        max-height: 80%;
+        align-items: flex-start;
         object-fit: contain;
     }
 
@@ -250,23 +252,22 @@
         position: absolute;
         z-index: 1;
         top: 50%;
-        bottom: 50%;
         font-size: 4rem;
         color: #911c1c;
     }
 
     &-previous {
-        left: 2em;
+        left: -2em;
     }
 
     &-next {
-        right: 2em;
+        right: -2em;
     }
 
     &-caption {
         all: unset;
         font-size: 4rem;
         color: #911c1c;
-        margin-top: 1em;
+        margin: 0.5em 0;
     }
 }
