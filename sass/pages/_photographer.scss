@@ -241,4 +241,24 @@
         max-height: 80%;
         object-fit: contain;
     }
+
+    &-previous,
+    &-next {
+        all: unset;
+        cursor: pointer;
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        bottom: 50%;
+        font-size: 4rem;
+        color: #911c1c;
+    }
+
+    &-previous {
+        left: 2em;
+    }
+
+    &-next {
+        right: 2em;
+    }
 }

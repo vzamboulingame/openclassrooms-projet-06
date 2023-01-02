@@ -430,4 +430,20 @@ dialog {
   max-height: 80%;
   -o-object-fit: contain;
      object-fit: contain;
+}
+.lightbox-previous, .lightbox-next {
+  all: unset;
+  cursor: pointer;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  bottom: 50%;
+  font-size: 4rem;
+  color: #911c1c;
+}
+.lightbox-previous {
+  left: 2em;
+}
+.lightbox-next {
+  right: 2em;
 }/*# sourceMappingURL=style.css.map */
