@@ -333,15 +333,32 @@ dialog {
   align-items: center;
   justify-content: space-between;
   margin-top: 1em;
-  color: #911c1c;
 }
 .media-card-title {
+  max-width: 80%;
   font-weight: 400;
   font-size: 2.4rem;
+  color: #911c1c;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
-.media-card-likes {
+.media-like-container {
+  display: flex;
+  flex-flow: row nowrap;
+}
+.media-like-count {
   font-weight: 400;
   font-size: 2.2rem;
+  margin-right: 0.2em;
+  color: #911c1c;
+}
+.media-like-button {
+  border: none;
+  background-color: transparent;
+  font-size: 2.2rem;
+  color: #911c1c;
+  cursor: pointer;
 }
 
 .modal {

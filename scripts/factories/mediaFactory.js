@@ -14,10 +14,15 @@ export function mediaFactory(data) {
       <figure class="media-card-figure" id="${id}" tabindex="0">
         <img class="media-card-img" src="assets/images/${photographerId}/${image}" alt="${title}">
       </figure>
-      <div class="media-card-info">
+      <section class="media-card-info">
         <h2 class="media-card-title">${title}</h2>
-        <span class="media-card-likes">${likes} <i class="fa-solid fa-heart"></i></i></span>
-      </div>
+        <div class="media-like-container">
+          <span class="media-like-count">${likes}</span>
+          <button class="media-like-button" aria-label="Bouton de likes">
+            <i class="fa-solid fa-heart"></i>
+          </button>
+        </div>
+      </section>
     `;
     }
 
@@ -29,10 +34,15 @@ export function mediaFactory(data) {
           <source src="assets/images/${photographerId}/${video}" type="video/mp4">
         </video>
       </figure>
-      <div class="media-card-info">
+      <section class="media-card-info">
         <h2 class="media-card-title">${title}</h2>
-        <span class="media-card-likes">${likes} <i class="fa-solid fa-heart"></i></i></span>
-      </div>
+        <div class="media-like-container">
+          <span class="media-like-count">${likes}</span>
+          <button class="media-like-button" aria-label="Bouton de likes">
+            <i class="fa-solid fa-heart"></i>
+          </button>
+        </div>
+      </section>
     `;
     }
 
