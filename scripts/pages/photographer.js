@@ -34,23 +34,6 @@ function renderPhotographHeader(object) {
   mainEl.innerHTML += photographHeader;
 }
 
-function renderPhotographFooter(object) {
-  // Destructuring the photographer info object to extract the photographer price
-  const { price } = object;
-
-  // Create the HTML for the footer section
-  const photographFooter = `
-    <aside class="photograph-footer">
-        <i class="fa-solid fa-heart"></i>
-        <p>${price} € / jour</p>
-    </aside>
-  `;
-
-  // Add the footer section HTML to the footer element
-  const footerEl = document.querySelector("footer");
-  footerEl.innerHTML += photographFooter;
-}
-
 function renderMediaArticle(array) {
   // Create a new div element to hold the media cards
   const mediaSection = document.createElement("div");
@@ -69,6 +52,26 @@ function renderMediaArticle(array) {
     // Add the card to the media section
     mediaSection.append(mediaCardDOM);
   });
+}
+
+function renderPhotographFooter(object) {
+  // Destructuring the photographer info object to extract the photographer price
+  const { price } = object;
+
+  // Create the HTML for the footer section
+  const photographFooter = `
+    <aside class="footer">
+      <div class="footer-container">
+        <span class="footer-likes" id="totalLikesCount">0</span>
+        <i class="fa-solid fa-heart"></i>
+      </div>
+      <p>${price} € / jour</p>
+    </aside>
+  `;
+
+  // Add the footer section HTML to the footer element
+  const footerEl = document.querySelector("footer");
+  footerEl.innerHTML = photographFooter;
 }
 
 function insertPhotographName(object) {
@@ -234,11 +237,11 @@ async function renderPhotographMediaPage() {
   // Render the header section of the page with the photographer's name, location, tagline, and portrait
   await renderPhotographHeader(photographerInfo);
 
-  // Render the footer section of the page with the photographer's likes and rate
-  await renderPhotographFooter(photographerInfo);
-
   // Render the media section of the page with cards for each media item
   await renderMediaArticle(photographerMedia);
+
+  // Render the footer section of the page with the photographer's likes and rate
+  await renderPhotographFooter(photographerInfo);
 
   // Insert the photographer name in the modal title
   await insertPhotographName(photographerInfo);
