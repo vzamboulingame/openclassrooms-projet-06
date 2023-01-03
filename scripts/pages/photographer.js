@@ -58,11 +58,19 @@ function renderPhotographFooter(object) {
   // Destructuring the photographer info object to extract the photographer price
   const { price } = object;
 
+  // Calculate total media likes count and store it in a variable
+  const mediaLikeCount = document.querySelectorAll(".media-like-count");
+  let totalMediaLikeCount = 0;
+
+  mediaLikeCount.forEach((media) => {
+    totalMediaLikeCount += Number(media.textContent);
+  });
+
   // Create the HTML for the footer section
   const photographFooter = `
     <aside class="footer">
       <div class="footer-container">
-        <span class="footer-likes" id="totalLikesCount">0</span>
+        <span class="footer-likes" id="totalLikesCount">${totalMediaLikeCount}</span>
         <i class="fa-solid fa-heart"></i>
       </div>
       <p>${price} € / jour</p>
