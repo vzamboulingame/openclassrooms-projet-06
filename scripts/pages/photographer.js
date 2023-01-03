@@ -112,7 +112,6 @@ async function renderLightBoxMedia(mediaId) {
 
   // Update the currentMediaId variable with the current lightbox media id
   currentLightboxMediaId = mediaId;
-  console.log(currentLightboxMediaId);
 
   // Destructuring the media object to extract its properties
   const { title, photographerId, image, video } = mediaObject;
@@ -194,7 +193,7 @@ function addEventListeners() {
   const mediaCardFigures = document.querySelectorAll(".media-card-figure");
   mediaCardFigures.forEach((card) => {
     card.addEventListener("click", () => {
-      const mediaId = card.id;
+      const mediaId = card.parentElement.id;
       renderLightBoxMedia(mediaId);
       displayModal("lightboxModal");
     });
