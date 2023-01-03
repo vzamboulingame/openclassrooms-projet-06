@@ -183,6 +183,23 @@ function previousLightBoxMedia() {
   }
 }
 
+function addLikes() {
+  // Get the media likes span element
+  const mediaLikesSpanEl = this.parentNode.firstElementChild;
+
+  // Convert its content to a number and store it as mediaLikeCount variable
+  let mediaLikeCount = Number(mediaLikesSpanEl.textContent);
+
+  // Increment the mediaLikeCount variable
+  mediaLikeCount++;
+
+  // Define the mediaLikeCount value as media likes span element new content
+  mediaLikesSpanEl.textContent = mediaLikeCount;
+
+  // Render the photographer footer to recalculate the total likes count
+  renderPhotographFooter(photographerInfo);
+}
+
 function addEventListeners() {
   // Add an event listener to the contact button to open the contact modal on click
   const contactBtn = document.getElementById("contactBtn");
@@ -208,6 +225,12 @@ function addEventListeners() {
       renderLightBoxMedia(mediaId);
       displayModal("lightboxModal");
     });
+  });
+
+  // Add an event listener to each media card like button to execute the addLikes function on click
+  const mediaCardLikeButtons = document.querySelectorAll(".media-like-button");
+  mediaCardLikeButtons.forEach((button) => {
+    button.addEventListener("click", addLikes);
   });
 
   // Add an event listener to the close button in the lightbox modal to close the modal on click
