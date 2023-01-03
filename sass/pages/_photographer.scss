@@ -173,9 +173,9 @@
     }
 
     &-close {
-        all: unset;
+        border: none;
+        background-color: transparent;
         cursor: pointer;
-        margin-top: 1em;
     }
 
     &-form {
@@ -198,7 +198,6 @@
         border-radius: 0.5rem;
         font-size: 2rem;
         margin: 0;
-        padding: 1em;
     }
 
     &-msg {
@@ -229,12 +228,13 @@
     }
 
     &-close {
-        all: unset;
-        cursor: pointer;
         position: absolute;
         z-index: 1;
         top: 0;
         right: -6em;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
     }
 
     &-media {
@@ -247,13 +247,14 @@
 
     &-previous,
     &-next {
-        all: unset;
-        cursor: pointer;
         position: absolute;
         z-index: 1;
         top: 50%;
         font-size: 4rem;
+        border: none;
+        background-color: transparent;
         color: #911c1c;
+        cursor: pointer;
     }
 
     &-previous {

@@ -219,11 +219,6 @@ function addEventListeners() {
     // Get the lightboxModal element
     const lightboxModal = document.getElementById("lightboxModal");
 
-    // Do nothing if the event was already processed
-    if (event.defaultPrevented) {
-      return;
-    }
-
     // If lightboxModal is open & the left arrow key is pressed, call the previousLightBoxMedia function
     if (lightboxModal.open && event.key === "ArrowLeft") {
       previousLightBoxMedia();
@@ -233,9 +228,6 @@ function addEventListeners() {
     if (lightboxModal.open && event.key === "ArrowRight") {
       nextLightBoxMedia();
     }
-
-    // Cancel the default action to avoid it being handled twice
-    event.preventDefault();
   });
 }
 

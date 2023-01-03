@@ -369,9 +369,9 @@ dialog {
   font-weight: 400;
 }
 .modal-close {
-  all: unset;
+  border: none;
+  background-color: transparent;
   cursor: pointer;
-  margin-top: 1em;
 }
 .modal-form {
   display: flex;
@@ -391,7 +391,6 @@ dialog {
   border-radius: 0.5rem;
   font-size: 2rem;
   margin: 0;
-  padding: 1em;
 }
 .modal-msg {
   height: 14rem;
@@ -418,12 +417,13 @@ dialog {
   position: relative;
 }
 .lightbox-close {
-  all: unset;
-  cursor: pointer;
   position: absolute;
   z-index: 1;
   top: 0;
   right: -6em;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 .lightbox-media {
   display: flex;
@@ -434,13 +434,14 @@ dialog {
      object-fit: contain;
 }
 .lightbox-previous, .lightbox-next {
-  all: unset;
-  cursor: pointer;
   position: absolute;
   z-index: 1;
   top: 50%;
   font-size: 4rem;
+  border: none;
+  background-color: transparent;
   color: #911c1c;
+  cursor: pointer;
 }
 .lightbox-previous {
   left: -2em;
