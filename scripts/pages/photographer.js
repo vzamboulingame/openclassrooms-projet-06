@@ -183,21 +183,44 @@ function previousLightBoxMedia() {
   }
 }
 
-function addLikes() {
-  // Get the media likes span element
-  const mediaLikesSpanEl = this.parentNode.firstElementChild;
+function renderLikes() {
+  // Get the media like span element
+  const mediaLikeSpanEl = this.parentNode.firstElementChild;
 
-  // Convert its content to a number and store it as mediaLikeCount variable
-  let mediaLikeCount = Number(mediaLikesSpanEl.textContent);
+  // Get the media like icon element
+  const mediaLikeIconEl = this.firstElementChild;
 
-  // Increment the mediaLikeCount variable
-  mediaLikeCount++;
+  if (mediaLikeIconEl.classList.contains("fa-solid")) {
+    // Convert media like span content to a number and store it as mediaLikeCount variable
+    let mediaLikeCount = Number(mediaLikeSpanEl.textContent);
 
-  // Define the mediaLikeCount value as media likes span element new content
-  mediaLikesSpanEl.textContent = mediaLikeCount;
+    // Increment the mediaLikeCount variable
+    mediaLikeCount++;
 
-  // Render the photographer footer to recalculate the total likes count
-  renderPhotographFooter(photographerInfo);
+    // Define the mediaLikeCount value as media likes span element new content
+    mediaLikeSpanEl.textContent = mediaLikeCount;
+
+    // Render the photographer footer to recalculate the total likes count
+    renderPhotographFooter(photographerInfo);
+
+    // Replace the fa-solid with the fa-regular class
+    mediaLikeIconEl.classList.replace("fa-solid", "fa-regular");
+  } else if (mediaLikeIconEl.classList.contains("fa-regular")) {
+    // Convert media like span content to a number and store it as mediaLikeCount variable
+    let mediaLikeCount = Number(mediaLikeSpanEl.textContent);
+
+    // Decrease the mediaLikeCount variable
+    mediaLikeCount--;
+
+    // Define the mediaLikeCount value as media likes span element new content
+    mediaLikeSpanEl.textContent = mediaLikeCount;
+
+    // Render the photographer footer to recalculate the total likes count
+    renderPhotographFooter(photographerInfo);
+
+    // Replace the fa-regular with the fa-solid class
+    mediaLikeIconEl.classList.replace("fa-regular", "fa-solid");
+  }
 }
 
 function addEventListeners() {
@@ -227,10 +250,10 @@ function addEventListeners() {
     });
   });
 
-  // Add an event listener to each media card like button to execute the addLikes function on click
+  // Add an event listener to each media card like button to execute the renderLikes function on click
   const mediaCardLikeButtons = document.querySelectorAll(".media-like-button");
   mediaCardLikeButtons.forEach((button) => {
-    button.addEventListener("click", addLikes);
+    button.addEventListener("click", renderLikes);
   });
 
   // Add an event listener to the close button in the lightbox modal to close the modal on click
