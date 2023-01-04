@@ -21,17 +21,13 @@
     width: 18rem;
     height: 7rem;
     padding: 1em;
+    margin: 1em 0 2em 0;
     background: #901c1c;
     color: #ffffff;
     font-size: 2rem;
     font-weight: 700;
     border-right: 2rem solid transparent;
     border-radius: 0.5rem;
-    outline: 0;
-
-    @include for-tablet {
-        margin: 1em auto;
-    }
 }
 
 .footer {
@@ -120,13 +116,13 @@
 
 .media {
     &-section {
-        display: flex;
-        flex-flow: row wrap;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 35rem);
         justify-content: space-between;
-        row-gap: 2em;
-        padding: 2em 0;
+        grid-gap: 2rem;
 
         @include for-mobile {
+            display: flex;
             flex-flow: column wrap;
             justify-content: center;
             align-items: center;
