@@ -38,6 +38,7 @@ function renderDropdown() {
   // Create the HTML for the dropdown menu
   const dropdownHtml = `
     <select class="dropdown" id="dropdownMenu" aria-label="Menu de tri">
+      <option value=""> Trier par </option>
       <option value="Popularité">Popularité</option>
       <option value="Date">Date</option>
       <option value="Titre">Titre</option>
@@ -49,7 +50,7 @@ function renderDropdown() {
   mainEl.innerHTML += dropdownHtml;
 }
 
-function renderMediaArticle(array) {
+function renderMediaSection(array) {
   // Create a new div element to hold the media cards
   const mediaSection = document.createElement("div");
   mediaSection.className = "media-section";
@@ -238,7 +239,66 @@ function renderLikes() {
   }
 }
 
+async function sortMediaSection() {
+  // Retrieve the selected option value
+  const selectedOption = this.value;
+
+  // Sort the photographerMedia array using the likes key if the selected option is "Popularité"
+  if (selectedOption == "Popularité") {
+    await photographerMedia.sort((a, b) => {
+      return b.likes - a.likes;
+    });
+  }
+
+  // Sort the photographerMedia array using the date key if the selected option is "Date"
+  if (selectedOption == "Date") {
+    await photographerMedia.sort((a, b) => {
+      return new Date(a.date) - new Date(b.date);
+    });
+  }
+
+  // Sort the photographerMedia array using the title key if the selected option is "Titre"
+  if (selectedOption == "Titre") {
+    await photographerMedia.sort((a, b) => {
+      if (a.title < b.title) {
+        return -1;
+      }
+      if (a.title > b.title) {
+        return 1;
+      }
+      return 0;
+    });
+  }
+
+  // Remove the existing media section
+  const mediaSection = document.querySelector(".media-section");
+  mediaSection.remove();
+
+  // Render the media article section using the sorted photographerMedia array
+  renderMediaSection(photographerMedia);
+
+  // Add an event listener to each media card figure to open the lightbox modal on click
+  const mediaCardFigures = document.querySelectorAll(".media-card-figure");
+  mediaCardFigures.forEach((card) => {
+    card.addEventListener("click", () => {
+      const mediaId = card.parentElement.id;
+      renderLightBoxMedia(mediaId);
+      displayModal("lightboxModal");
+    });
+  });
+
+  // Add an event listener to each media card like button to execute the renderLikes function on click
+  const mediaCardLikeButtons = document.querySelectorAll(".media-like-button");
+  mediaCardLikeButtons.forEach((button) => {
+    button.addEventListener("click", renderLikes);
+  });
+}
+
 function addEventListeners() {
+  // Add an event listener to the dropdown menu to sort the media section on change
+  const dropdownMenu = document.getElementById("dropdownMenu");
+  dropdownMenu.addEventListener("change", sortMediaSection);
+
   // Add an event listener to the contact button to open the contact modal on click
   const contactBtn = document.getElementById("contactBtn");
   contactBtn.addEventListener("click", () => {
@@ -310,7 +370,7 @@ async function renderPhotographMediaPage() {
   await renderDropdown();
 
   // Render the media section of the page with cards for each media item
-  await renderMediaArticle(photographerMedia);
+  await renderMediaSection(photographerMedia);
 
   // Render the footer section of the page with the photographer's likes and rate
   await renderPhotographFooter(photographerInfo);
