@@ -230,6 +230,17 @@ dialog {
   cursor: pointer;
 }
 
+.dropdown {
+  width: 17rem;
+  height: 7rem;
+  padding: 1em;
+  background: #901c1c;
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 700;
+  border-radius: 0.5rem;
+}
+
 .footer {
   z-index: 1;
   position: fixed;

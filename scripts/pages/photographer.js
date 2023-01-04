@@ -34,6 +34,21 @@ function renderPhotographHeader(object) {
   mainEl.innerHTML += photographHeader;
 }
 
+function renderDropdown() {
+  // Create the HTML for the dropdown menu
+  const dropdownHtml = `
+    <select class="dropdown" id="dropdownMenu" aria-label="Menu de tri">
+      <option value="Popularité">Popularité</option>
+      <option value="Date">Date</option>
+      <option value="Titre">Titre</option>
+    </select>
+  `;
+
+  // Add the dropdown HTML to the main element
+  const mainEl = document.querySelector("main");
+  mainEl.innerHTML += dropdownHtml;
+}
+
 function renderMediaArticle(array) {
   // Create a new div element to hold the media cards
   const mediaSection = document.createElement("div");
@@ -290,6 +305,9 @@ function addEventListeners() {
 async function renderPhotographMediaPage() {
   // Render the header section of the page with the photographer's name, location, tagline, and portrait
   await renderPhotographHeader(photographerInfo);
+
+  // Render the dropdown menu
+  await renderDropdown();
 
   // Render the media section of the page with cards for each media item
   await renderMediaArticle(photographerMedia);
