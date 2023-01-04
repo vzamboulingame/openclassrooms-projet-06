@@ -18,14 +18,20 @@
 }
 
 .dropdown {
-    width: 17rem;
+    width: 18rem;
     height: 7rem;
     padding: 1em;
     background: #901c1c;
     color: #ffffff;
     font-size: 2rem;
     font-weight: 700;
+    border-right: 2rem solid transparent;
     border-radius: 0.5rem;
+    outline: 0;
+
+    @include for-tablet {
+        margin: 1em auto;
+    }
 }
 
 .footer {

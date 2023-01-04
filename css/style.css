@@ -66,6 +66,14 @@ main {
   width: 90%;
   margin: 0 auto;
 }
+@media only screen and (max-width: 1023px) {
+  main {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
 
 .header {
   display: flex;
@@ -231,14 +239,21 @@ dialog {
 }
 
 .dropdown {
-  width: 17rem;
+  width: 18rem;
   height: 7rem;
   padding: 1em;
   background: #901c1c;
   color: #ffffff;
   font-size: 2rem;
   font-weight: 700;
+  border-right: 2rem solid transparent;
   border-radius: 0.5rem;
+  outline: 0;
+}
+@media only screen and (max-width: 1023px) {
+  .dropdown {
+    margin: 1em auto;
+  }
 }
 
 .footer {
