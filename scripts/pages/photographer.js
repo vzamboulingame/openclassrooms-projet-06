@@ -360,6 +360,21 @@ function addEventListeners() {
       nextLightBoxMedia();
     }
   });
+
+  // Add an event listener to the contact & lightbox modal to close the modal on press of ESC button
+  document.addEventListener("keydown", (event) => {
+    // If lightboxModal is open & the ESC key is pressed, call the closeModal function
+    const lightboxModal = document.getElementById("lightboxModal");
+    if (lightboxModal.open && event.key === "Escape") {
+      closeModal("lightboxModal");
+    }
+
+    // If contactModal is open & the ESC key is pressed, call the closeModal function
+    const contactModal = document.getElementById("contactModal");
+    if (contactModal.open && event.key === "Escape") {
+      closeModal("contactModal");
+    }
+  });
 }
 
 async function renderPhotographMediaPage() {
