@@ -119,7 +119,7 @@
         display: grid;
         grid-template-columns: repeat(auto-fill, 35rem);
         justify-content: space-between;
-        grid-gap: 2rem;
+        row-gap: 2em;
 
         @include for-mobile {
             display: flex;
