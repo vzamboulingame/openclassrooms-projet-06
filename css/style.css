@@ -106,6 +106,14 @@ dialog {
   border: none;
 }
 
+label {
+  margin: 0.1em 0;
+}
+
+input {
+  padding: 0.5em;
+}
+
 /*****************************************
 * UTILITY CLASSES
 *****************************************/
@@ -447,30 +455,35 @@ dialog {
 }
 
 .lightbox {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
   display: none;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   border-radius: 0.5rem;
   background-color: #ffffff;
-  width: 100vw;
-  height: 100vh;
   padding: 2em;
 }
 .lightbox-container {
-  position: relative;
+  display: grid;
+  grid-template-columns: 8% 84% 8%;
 }
-.lightbox-close {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  right: -6em;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
+.lightbox-grid1, .lightbox-grid3 {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+.lightbox-grid1 {
+  grid-column: 1;
+}
+.lightbox-grid2 {
+  grid-column: 2;
+}
+.lightbox-grid3 {
+  position: relative;
+  grid-column: 3;
 }
 .lightbox-media {
   display: flex;
@@ -479,22 +492,28 @@ dialog {
   align-items: flex-start;
   -o-object-fit: contain;
      object-fit: contain;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+.lightbox-close {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 .lightbox-previous, .lightbox-next {
-  position: absolute;
-  z-index: 1;
-  top: 50%;
   font-size: 4rem;
   border: none;
   background-color: transparent;
   color: #911c1c;
   cursor: pointer;
-}
-.lightbox-previous {
-  left: -2em;
-}
-.lightbox-next {
-  right: -2em;
 }
 .lightbox-caption {
   all: unset;
