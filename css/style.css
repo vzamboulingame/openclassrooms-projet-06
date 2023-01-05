@@ -250,12 +250,10 @@ input {
   width: 18rem;
   height: 7rem;
   padding: 1em;
-  margin: 1em 0 2em 0;
   background: #901c1c;
   color: #ffffff;
   font-size: 2rem;
   font-weight: 700;
-  border-right: 2rem solid transparent;
   border-radius: 0.5rem;
 }
 
@@ -294,7 +292,7 @@ input {
   background-color: #fafafa;
   height: 30rem;
   padding: 3em;
-  margin: 2em 0;
+  margin-bottom: 2em;
 }
 @media only screen and (max-width: 1023px) {
   .photograph-header {
@@ -305,7 +303,6 @@ input {
     row-gap: 1em;
     height: 100%;
     width: 100%;
-    margin: 0;
   }
 }
 .photograph-info {
@@ -341,6 +338,7 @@ input {
   grid-template-columns: repeat(auto-fill, 35rem);
   justify-content: space-between;
   row-gap: 2em;
+  padding: 2em 0;
 }
 @media only screen and (max-width: 767px) {
   .media-section {
