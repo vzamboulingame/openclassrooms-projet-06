@@ -247,14 +247,14 @@ input {
 }
 
 .dropdown {
-  width: 18rem;
+  width: 17rem;
   height: 7rem;
-  padding: 1em;
-  background: #901c1c;
+  background-color: #901c1c;
   color: #ffffff;
   font-size: 2rem;
   font-weight: 700;
   border-radius: 0.5rem;
+  border: 2rem solid #901c1c;
 }
 
 .footer {
