@@ -12,9 +12,9 @@ export function mediaFactory(data) {
     // If the media is an image add the appropriate media card html to the article element
     if (image) {
       article.innerHTML = `
-      <figure class="media-card-figure" tabindex="0">
+      <button class="media-card-button" aria-label="Button d'ouverture de lightbox">
         <img class="media-card-img" src="assets/images/${photographerId}/${image}" alt="${title}">
-      </figure>
+      </button>
       <section class="media-card-info">
         <h2 class="media-card-title">${title}</h2>
         <div class="media-like-container">
@@ -30,11 +30,11 @@ export function mediaFactory(data) {
     // If the media is a video add the appropriate media card html to the article element
     if (video) {
       article.innerHTML = `
-      <figure class="media-card-figure" tabindex="0">
+      <button class="media-card-button" aria-label="Button d'ouverture de lightbox">
         <video class="media-card-video" title="${title}">
           <source src="assets/images/${photographerId}/${video}" type="video/mp4">
         </video>
-      </figure>
+      </button>
       <section class="media-card-info">
         <h2 class="media-card-title">${title}</h2>
         <div class="media-like-container">

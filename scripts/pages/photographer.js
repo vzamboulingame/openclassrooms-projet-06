@@ -277,9 +277,9 @@ async function sortMediaSection() {
   // Render the media article section using the sorted photographerMedia array
   renderMediaSection(photographerMedia);
 
-  // Add an event listener to each media card figure to open the lightbox modal on click
-  const mediaCardFigures = document.querySelectorAll(".media-card-figure");
-  mediaCardFigures.forEach((card) => {
+  // Add an event listener to each media card button to open the lightbox modal on click
+  const mediaCardButtons = document.querySelectorAll(".media-card-button");
+  mediaCardButtons.forEach((card) => {
     card.addEventListener("click", () => {
       const mediaId = card.parentElement.id;
       renderLightBoxMedia(mediaId);
@@ -315,9 +315,9 @@ function addEventListeners() {
   const modalForm = document.getElementById("modalForm");
   modalForm.addEventListener("submit", validateModalForm);
 
-  // Add an event listener to each media card figure to open the lightbox modal on click
-  const mediaCardFigures = document.querySelectorAll(".media-card-figure");
-  mediaCardFigures.forEach((card) => {
+  // Add an event listener to each media card button to open the lightbox modal on click
+  const mediaCardButtons = document.querySelectorAll(".media-card-button");
+  mediaCardButtons.forEach((card) => {
     card.addEventListener("click", () => {
       const mediaId = card.parentElement.id;
       renderLightBoxMedia(mediaId);

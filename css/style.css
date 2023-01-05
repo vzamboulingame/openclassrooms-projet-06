@@ -355,7 +355,9 @@ input {
   flex-flow: column nowrap;
   width: 35rem;
 }
-.media-card-figure {
+.media-card-button {
+  border: none;
+  background-color: transparent;
   cursor: pointer;
 }
 .media-card-img, .media-card-video {

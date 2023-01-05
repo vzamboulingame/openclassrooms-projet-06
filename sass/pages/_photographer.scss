@@ -134,7 +134,9 @@
         flex-flow: column nowrap;
         width: 35rem;
 
-        &-figure {
+        &-button {
+            border: none;
+            background-color: transparent;
             cursor: pointer;
         }
 
