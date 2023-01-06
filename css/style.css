@@ -58,12 +58,17 @@ h6 {
 *****************************************/
 body {
   font-family: "DM Sans", sans-serif;
+  width: 90%;
   max-width: 1920px;
   margin: 0 auto;
 }
+@media only screen and (max-width: 767px) {
+  body {
+    width: 100%;
+  }
+}
 
 main {
-  width: 90%;
   margin: 0 auto;
 }
 @media only screen and (max-width: 1023px) {
@@ -94,7 +99,6 @@ main {
 }
 .header-logo {
   height: 6rem;
-  margin-left: 10rem;
 }
 @media only screen and (max-width: 1023px) {
   .header-logo {
@@ -136,7 +140,7 @@ input {
 *****************************************/
 @media only screen and (max-width: 1365px) {
   html {
-    font-size: calc(62.5% - 0.2vw);
+    font-size: calc(62.5% - 0.3vw);
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -275,6 +279,16 @@ input {
   font-weight: 500;
   font-size: 2.5rem;
 }
+@media only screen and (max-width: 767px) {
+  .footer {
+    left: calc((100vw - 30rem) / 2);
+    right: calc((100vw - 30rem) / 2);
+    width: 30rem;
+    height: 6rem;
+    font-size: 2rem;
+    border-radius: unset;
+  }
+}
 .footer-container {
   display: flex;
   flex-flow: row nowrap;
@@ -337,16 +351,8 @@ input {
   display: grid;
   grid-template-columns: repeat(auto-fill, 35rem);
   justify-content: space-between;
-  row-gap: 2em;
+  gap: 2em 1em;
   padding: 2em 0;
-}
-@media only screen and (max-width: 767px) {
-  .media-section {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-  }
 }
 .media-card {
   display: flex;
@@ -462,9 +468,9 @@ input {
   height: 100%;
   max-width: 100%;
   max-height: 100%;
+  padding: 2em;
   border-radius: 0.5rem;
   background-color: #ffffff;
-  padding: 2em;
 }
 .lightbox-container {
   display: grid;
@@ -490,12 +496,10 @@ input {
   flex-flow: column nowrap;
   justify-content: center;
   align-items: flex-start;
+}
+.lightbox-img, .lightbox-video {
   -o-object-fit: contain;
      object-fit: contain;
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-  max-height: 100%;
 }
 .lightbox-close {
   position: absolute;
@@ -516,7 +520,6 @@ input {
   cursor: pointer;
 }
 .lightbox-caption {
-  all: unset;
   font-size: 4rem;
   color: #911c1c;
   margin: 0.5em 0;
