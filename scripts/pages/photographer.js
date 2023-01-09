@@ -206,7 +206,7 @@ function renderLikes() {
   // Get the media like icon element
   const mediaLikeIconEl = this.firstElementChild;
 
-  if (mediaLikeIconEl.classList.contains("fa-solid")) {
+  if (mediaLikeIconEl.classList.contains("fa-regular")) {
     // Convert media like span content to a number and store it as mediaLikeCount variable
     let mediaLikeCount = Number(mediaLikeSpanEl.textContent);
 
@@ -219,9 +219,9 @@ function renderLikes() {
     // Render the photographer footer to recalculate the total likes count
     renderPhotographFooter(photographerInfo);
 
-    // Replace the fa-solid with the fa-regular class
-    mediaLikeIconEl.classList.replace("fa-solid", "fa-regular");
-  } else if (mediaLikeIconEl.classList.contains("fa-regular")) {
+    // Replace the fa-regular with the fa-solid class
+    mediaLikeIconEl.classList.replace("fa-regular", "fa-solid");
+  } else if (mediaLikeIconEl.classList.contains("fa-solid")) {
     // Convert media like span content to a number and store it as mediaLikeCount variable
     let mediaLikeCount = Number(mediaLikeSpanEl.textContent);
 
@@ -234,8 +234,8 @@ function renderLikes() {
     // Render the photographer footer to recalculate the total likes count
     renderPhotographFooter(photographerInfo);
 
-    // Replace the fa-regular with the fa-solid class
-    mediaLikeIconEl.classList.replace("fa-regular", "fa-solid");
+    // Replace the fa-solid with the fa-regular class
+    mediaLikeIconEl.classList.replace("fa-solid", "fa-regular");
   }
 }
 
