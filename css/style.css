@@ -110,14 +110,6 @@ dialog {
   border: none;
 }
 
-label {
-  margin: 0.1em 0;
-}
-
-input {
-  padding: 0.5em;
-}
-
 /*****************************************
 * UTILITY CLASSES
 *****************************************/
@@ -452,6 +444,7 @@ input {
   border-radius: 0.5rem;
   font-size: 2rem;
   margin: 0;
+  padding: 0.5em;
 }
 .modal-msg {
   height: 14rem;
