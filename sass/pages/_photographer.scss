@@ -198,7 +198,12 @@
     border-radius: 0.5rem;
     background-color: #db8876;
     width: 70rem;
+    height: fit-content;
     padding: 2em;
+
+    @include for-mobile {
+        width: 100%;
+    }
 
     &-header {
         display: flex;
@@ -285,6 +290,7 @@
 
     &-grid1 {
         grid-column: 1;
+        align-items: flex-end;
     }
 
     &-grid2 {
@@ -294,6 +300,7 @@
     &-grid3 {
         position: relative;
         grid-column: 3;
+        align-items: flex-start;
     }
 
     &-media {
@@ -301,6 +308,7 @@
         flex-flow: column nowrap;
         justify-content: center;
         align-items: flex-start;
+        margin: 0 1em;
     }
 
     &-img,
@@ -311,8 +319,7 @@
     &-close {
         position: absolute;
         top: 0;
-        left: 50%;
-        right: 50%;
+        left: 0;
         width: 3rem;
         height: 3rem;
         border: none;
@@ -335,7 +342,7 @@
     }
 
     &-caption {
-        font-size: 4rem;
+        font-size: 3rem;
         color: #911c1c;
         margin: 0.5em 0;
     }
