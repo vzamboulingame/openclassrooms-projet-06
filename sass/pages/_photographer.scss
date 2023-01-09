@@ -207,6 +207,7 @@
 
     @include for-mobile {
         width: 100%;
+        padding: 1em;
     }
 
     &-header {
@@ -221,6 +222,10 @@
         vertical-align: top;
         font-size: 5rem;
         font-weight: 400;
+
+        @include for-mobile {
+            font-size: 3.5rem;
+        }
     }
 
     &-close {
@@ -229,6 +234,11 @@
         border: none;
         background-color: transparent;
         cursor: pointer;
+
+        @include for-mobile {
+            width: 3rem;
+            height: 3rem;
+        }
 
         &-img {
             width: 100%;
@@ -247,6 +257,10 @@
     &-label {
         color: #312e2e;
         font-size: 3rem;
+
+        @include for-mobile {
+            font-size: 2rem;
+        }
     }
 
     &-input {
@@ -257,14 +271,26 @@
         font-size: 2rem;
         margin: 0;
         padding: 0.5em;
+
+        @include for-mobile {
+            font-size: 1rem;
+        }
     }
 
     &-msg {
         height: 14rem;
+
+        @include for-mobile {
+            height: 10rem;
+        }
     }
 
     &-submit {
         margin-top: 2em;
+
+        @include for-mobile {
+            margin-top: 0;
+        }
     }
 }
 
