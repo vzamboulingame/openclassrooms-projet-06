@@ -6,9 +6,12 @@
 
 body {
     font-family: "DM Sans", sans-serif;
-    width: 90%;
-    max-width: 1920px;
+    width: 80%;
     margin: 0 auto;
+
+    @include for-tablet {
+        width: 90%;
+    }
 
     @include for-mobile {
         width: 100%;

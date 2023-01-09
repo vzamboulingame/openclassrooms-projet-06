@@ -32,12 +32,12 @@
     z-index: 1;
     position: fixed;
     bottom: 0;
-    right: 5%;
+    right: 10%;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    width: 40rem;
+    width: 35rem;
     height: 10rem;
     padding: 1em;
     background: #db8876;
@@ -45,6 +45,10 @@
     border-radius: 0.5rem;
     font-weight: 500;
     font-size: 2.5rem;
+
+    @include for-tablet {
+        right: 50%;
+    }
 
     @include for-mobile {
         left: calc((100vw - 30rem) / 2);
