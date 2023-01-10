@@ -131,12 +131,25 @@
         justify-content: space-between;
         gap: 2em 1em;
         padding: 2em 0;
+
+        @include for-mobile {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            gap: 2em 0;
+        }
     }
 
     &-card {
         display: flex;
         flex-flow: column nowrap;
         width: 35rem;
+
+        @include for-mobile {
+            width: 100%;
+        }
 
         &-button {
             border: none;
@@ -150,6 +163,11 @@
             height: 30rem;
             object-fit: cover;
             border-radius: 0.5rem;
+
+            @include for-mobile {
+                width: 100%;
+                border-radius: unset;
+            }
         }
 
         &-info {

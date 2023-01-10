@@ -67,7 +67,7 @@ body {
 }
 @media only screen and (max-width: 767px) {
   body {
-    width: 100%;
+    width: 95%;
   }
 }
 
@@ -379,10 +379,25 @@ body {
   gap: 2em 1em;
   padding: 2em 0;
 }
+@media only screen and (max-width: 767px) {
+  .media-section {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 2em 0;
+  }
+}
 .media-card {
   display: flex;
   flex-flow: column nowrap;
   width: 35rem;
+}
+@media only screen and (max-width: 767px) {
+  .media-card {
+    width: 100%;
+  }
 }
 .media-card-button {
   border: none;
@@ -395,6 +410,12 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 0.5rem;
+}
+@media only screen and (max-width: 767px) {
+  .media-card-img, .media-card-video {
+    width: 100%;
+    border-radius: unset;
+  }
 }
 .media-card-info {
   display: flex;
