@@ -262,7 +262,7 @@ body {
   font-weight: bold;
   color: white;
   padding: 1.1rem;
-  width: 17rem;
+  width: 19rem;
   height: 7rem;
   border: none;
   background-color: #901c1c;
@@ -271,7 +271,7 @@ body {
 }
 
 .dropdown {
-  width: 17rem;
+  width: 19rem;
   height: 7rem;
   background-color: #901c1c;
   color: #ffffff;
@@ -279,6 +279,14 @@ body {
   font-weight: 700;
   border-radius: 0.5rem;
   border: 2rem solid #901c1c;
+}
+.dropdown-options {
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.8rem;
+  background-color: #901c1c;
+  color: #ffffff;
 }
 
 .footer {

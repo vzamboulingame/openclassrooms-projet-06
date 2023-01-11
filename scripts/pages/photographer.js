@@ -38,10 +38,10 @@ function renderDropdown() {
   // Create the HTML for the dropdown menu
   const dropdownHtml = `
     <select class="dropdown" id="dropdownMenu" aria-label="Menu de tri">
-      <option value=""> Trier par </option>
-      <option value="Popularité">Popularité</option>
-      <option value="Date">Date</option>
-      <option value="Titre">Titre</option>
+      <option class="dropdown-options" value=""> Trier par </option>
+      <option class="dropdown-options" value="Popularité">Popularité</option>
+      <option class="dropdown-options" value="Date">Date</option>
+      <option class="dropdown-options" value="Titre">Titre</option>
     </select>
   `;
 
