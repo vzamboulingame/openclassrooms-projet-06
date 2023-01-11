@@ -232,7 +232,6 @@
     padding: 2em;
 
     @include for-mobile {
-        position: fixed;
         width: 100%;
         padding: 1em;
     }
@@ -299,6 +298,7 @@
         padding: 0.5em;
 
         @include for-mobile {
+            height: 4rem;
             font-size: 1rem;
         }
     }

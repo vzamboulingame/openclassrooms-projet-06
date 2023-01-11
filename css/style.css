@@ -473,7 +473,6 @@ body {
 }
 @media only screen and (max-width: 767px) {
   .modal {
-    position: fixed;
     width: 100%;
     padding: 1em;
   }
@@ -538,6 +537,7 @@ body {
 }
 @media only screen and (max-width: 767px) {
   .modal-input {
+    height: 4rem;
     font-size: 1rem;
   }
 }
