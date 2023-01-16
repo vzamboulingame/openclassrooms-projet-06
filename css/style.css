@@ -559,6 +559,7 @@ body {
 }
 
 .lightbox {
+  position: fixed;
   display: none;
   justify-content: center;
   align-items: center;
@@ -596,11 +597,17 @@ body {
   flex-flow: column nowrap;
   justify-content: center;
   align-items: flex-start;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
   margin: 0 1em;
 }
 .lightbox-img, .lightbox-video {
-  -o-object-fit: contain;
-     object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
 }
 .lightbox-close {
   position: absolute;
